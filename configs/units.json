@@ -1,0 +1,173 @@
+{
+    "infantry-1": {
+        "key": "infantry-1",
+        "assetKey": "infantry",
+        "type": "Infantry",
+        "attributes": {
+            "hp": 16,
+            "shoot": 8,
+            "defence": 8,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 0
+        },
+        "max": {
+            "hp": 36,
+            "shoot": 18,
+            "defence": 18
+        }
+    },
+    "infantry-2": {
+        "key": "infantry-2",
+        "assetKey": "infantry",
+        "type": "Infantry",
+        "attributes": {
+            "hp": 20,
+            "shoot": 10,
+            "defence": 10,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 50
+        },
+        "max": {
+            "hp": 36,
+            "shoot": 18,
+            "defence": 18
+        }
+    },
+    "infantry-3": {
+        "key": "infantry-3",
+        "assetKey": "infantry",
+        "type": "Infantry",
+        "attributes": {
+            "hp": 23,
+            "shoot": 11,
+            "defence": 11,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 99
+        },
+        "max": {
+            "hp": 36,
+            "shoot": 18,
+            "defence": 18
+        }
+    },
+    "armoured-infantry-1": {
+        "key": "armoured-infantry-1",
+        "assetKey": "armoured-infantry",
+        "type": "Armoured Infantry",
+        "attributes": {
+            "hp": 29,
+            "shoot": 14,
+            "defence": 14,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 0
+        },
+        "max": {
+            "hp": 64,
+            "shoot": 32,
+            "defence": 32
+        }
+    },
+    "armoured-infantry-2": {
+        "key": "armoured-infantry-2",
+        "assetKey": "armoured-infantry",
+        "type": "Armoured Infantry",
+        "attributes": {
+            "hp": 36,
+            "shoot": 17,
+            "defence": 17,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 50
+        },
+        "max": {
+            "hp": 64,
+            "shoot": 32,
+            "defence": 32
+        }
+    },
+    "armoured-infantry-3": {
+        "key": "armoured-infantry-3",
+        "assetKey": "armoured-infantry",
+        "type": "Armoured Infantry",
+        "attributes": {
+            "hp": 43,
+            "shoot": 20,
+            "defence": 20,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 99
+        },
+        "max": {
+            "hp": 64,
+            "shoot": 32,
+            "defence": 32
+        }
+    },
+    "mechanized-infantry-1": {
+        "key": "mechanized-infantry-1",
+        "assetKey": "mechanized-infantry",
+        "type": "Mech Infantry",
+        "attributes": {
+            "hp": 51,
+            "shoot": 25,
+            "defence": 25,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 0
+        },
+        "max": {
+            "hp": 114,
+            "shoot": 57,
+            "defence": 57
+        }
+    },
+    "mechanized-infantry-2": {
+        "key": "mechanized-infantry-2",
+        "assetKey": "mechanized-infantry",
+        "type": "Mech Infantry",
+        "attributes": {
+            "hp": 63,
+            "shoot": 31,
+            "defence": 31,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 50
+        },
+        "max": {
+            "hp": 114,
+            "shoot": 57,
+            "defence": 57
+        }
+    },
+    "mechanized-infantry-3": {
+        "key": "mechanized-infantry-3",
+        "assetKey": "mechanized-infantry",
+        "type": "Mech Infantry",
+        "attributes": {
+            "hp": 75,
+            "shoot": 37,
+            "defence": 37,
+            "trading": 0,
+            "performance": 0,
+            "building": 0,
+            "expert": 99
+        },
+        "max": {
+            "hp": 114,
+            "shoot": 57,
+            "defence": 57
+        }
+    }
+}

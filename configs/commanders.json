@@ -1,0 +1,79 @@
+{
+    "moro": {
+        "key": "moro",
+        "fullName": "Moro Dinando",
+        "shortName": "Moro",
+        "troopName": "Dinando 1st Squad",
+        "attributes": {
+            "hp": 30,
+            "shoot": 11,
+            "defence": 11,
+            "trading": 0,
+            "performance": 0,
+            "building": 0
+        },
+        "max": {
+            "hp": 342,
+            "shoot": 125,
+            "defence": 125
+        }
+    },
+    "jesse": {
+        "key": "jesse",
+        "fullName": "Jesse Azeiro",
+        "shortName": "Jesse",
+        "troopName": "Dinando 2nd Squad",
+        "attributes": {
+            "hp": 32,
+            "shoot": 10,
+            "defence": 9,
+            "trading": 0,
+            "performance": 0,
+            "building": 0
+        },
+        "max": {
+            "hp": 365,
+            "shoot": 114,
+            "defence": 103
+        }
+    },
+    "lu": {
+        "key": "lu",
+        "fullName": "Lu Dominic",
+        "shortName": "Lu",
+        "troopName": "Dominic and Company",
+        "attributes": {
+            "hp": 20,
+            "shoot": 5,
+            "defence": 7,
+            "trading": 0,
+            "performance": 0,
+            "building": 0
+        },
+        "max": {
+            "hp": 228,
+            "shoot": 57,
+            "defence": 80
+        }
+    },
+    "sal": {
+        "key": "sal",
+        "fullName": "Sal Venia Borosman",
+        "shortName": "Sal",
+        "troopName": "Borosman Fusiliers",
+        "attributes": {
+            "hp": 30,
+            "shoot": 12,
+            "defence": 10,
+            "trading": 0,
+            "performance": 0,
+            "building": 12
+        },
+        "max": {
+            "hp": 342,
+            "shoot": 137,
+            "defence": 114,
+            "building": 137
+        }
+    }
+}

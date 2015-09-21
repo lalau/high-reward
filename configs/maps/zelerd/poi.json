@@ -1,0 +1,80 @@
+[
+    {
+        "x": 312,
+        "y": 374,
+        "type": "city",
+        "name": "Osroth"
+    },
+    {
+        "x": 352,
+        "y": 310,
+        "type": "city",
+        "name": "Saranda"
+    },
+    {
+        "x": 280,
+        "y": 274,
+        "type": "city",
+        "name": "West Saranda"
+    },
+    {
+        "x": 177,
+        "y": 305,
+        "type": "stronghold",
+        "name": "Niflontia"
+    },
+    {
+        "x": 176,
+        "y": 210,
+        "type": "city",
+        "name": "Farenrath"
+    },
+    {
+        "x": 113,
+        "y": 261,
+        "type": "city",
+        "name": "Yamanraetia Island"
+    },
+    {
+        "x": 296,
+        "y": 162,
+        "type": "city",
+        "name": "Old Saranda"
+    },
+    {
+        "x": 313,
+        "y": 25,
+        "type": "city",
+        "name": "Citadel of Yuradean"
+    },
+    {
+        "x": 385,
+        "y": 61,
+        "type": "stronghold",
+        "name": "Kulemnos"
+    },
+    {
+        "x": 456,
+        "y": 134,
+        "type": "stronghold",
+        "name": "Drakegias"
+    },
+    {
+        "x": 537,
+        "y": 137,
+        "type": "stronghold",
+        "name": "Kenhobasam"
+    },
+    {
+        "x": 497,
+        "y": 201,
+        "type": "stronghold",
+        "name": "Koru"
+    },
+    {
+        "x": 425,
+        "y": 177,
+        "type": "stronghold",
+        "name": "Abadan"
+    }
+]

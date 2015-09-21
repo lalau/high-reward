@@ -1,0 +1,29 @@
+{
+  "name": "high-reward",
+  "version": "0.0.0",
+  "description": "High Reward Game Remake",
+  "main": "index.js",
+  "scripts": {
+    "start": "wzrd app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jshint .",
+    "validate": "npm ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktslwy/high-reward.git"
+  },
+  "author": "Lawrence Lau",
+  "bugs": {
+    "url": "https://github.com/ktslwy/high-reward/issues"
+  },
+  "homepage": "https://github.com/ktslwy/high-reward#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "eslint": "^1.5.0",
+    "wzrd": "^1.3.1"
+  }
+}
