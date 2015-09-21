@@ -10,7 +10,7 @@ var region;
 var game;
 
 function preload() {
-    var assetLoader = new AssetLoader(game, '../../assets/');
+    var assetLoader = new AssetLoader(game, '../assets/');
     assetLoader.load();
 }
 

@@ -6,6 +6,7 @@ var gameNode = document.querySelector('#game');
 var teamInfo = require('./team-info/team-info.js');
 var mapTracing = require('./map-tracing/map-tracing.js');
 var mapNavigation = require('./map-navigation/map-navigation.js');
+var contentUpdated = false;
 var game;
 
 function initExample(lib) {
@@ -44,11 +45,21 @@ function getExampleLib(hash) {
     return exampleLib;
 }
 
-document.querySelector('#example-list').addEventListener('click', function(e) {
-    var href = e.target.href;
+function updateContent(href) {
     var hash = href.substr(href.indexOf('#'));
-
     initExample(getExampleLib(hash));
+}
+
+document.querySelector('#example-list').addEventListener('click', function(e) {
+    updateContent(e.target.href);
+    contentUpdated = true;
+});
+
+window.addEventListener('popstate', function(e) {
+    if (!contentUpdated) {
+        updateContent(document.location.href);
+    }
+    contentUpdated = false;
 });
 
 initExample(getExampleLib(window.location.hash));
