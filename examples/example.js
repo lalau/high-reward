@@ -3,9 +3,10 @@
 var setupNode = document.querySelector('#setup');
 var titleNode = document.querySelector('#title');
 var gameNode = document.querySelector('#game');
-var teamInfo = require('./team-info/team-info.js');
+var troopInfo = require('./troop-info/troop-info.js');
 var mapTracing = require('./map-tracing/map-tracing.js');
 var mapNavigation = require('./map-navigation/map-navigation.js');
+var troopFormation = require('./troop-formation/troop-formation.js');
 var contentUpdated = false;
 var game;
 
@@ -29,8 +30,8 @@ function getExampleLib(hash) {
     var exampleLib;
 
     switch(hash) {
-    case '#team-info':
-        exampleLib = teamInfo;
+    case '#troop-info':
+        exampleLib = troopInfo;
         break;
     case '#map-tracing':
         exampleLib = mapTracing;
@@ -38,8 +39,11 @@ function getExampleLib(hash) {
     case '#map-navigation':
         exampleLib = mapNavigation;
         break;
+    case '#troop-formation':
+        exampleLib = troopFormation;
+        break;
     default:
-        exampleLib = teamInfo;
+        exampleLib = troopInfo;
     }
 
     return exampleLib;
@@ -55,7 +59,7 @@ document.querySelector('#example-list').addEventListener('click', function(e) {
     contentUpdated = true;
 });
 
-window.addEventListener('popstate', function(e) {
+window.addEventListener('popstate', function() {
     if (!contentUpdated) {
         updateContent(document.location.href);
     }

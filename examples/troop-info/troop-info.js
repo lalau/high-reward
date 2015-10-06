@@ -1,14 +1,23 @@
 'use strict';
 
-var CommanderPanel = require('../../lib/commander-panel');
-var TroopInfoPanel = require('../../lib/troop-info-panel');
-var PersonnelPanel = require('../../lib/personnel-panel');
+var CommanderPanel = require('../../lib/panels/commander-panel');
+var TroopInfoPanel = require('../../lib/panels/troop-info-panel');
+var PersonnelPanel = require('../../lib/panels/personnel-panel');
 var Commander = require('../../lib/commander');
 var Unit = require('../../lib/unit');
 var Troop = require('../../lib/troop');
 var AssetLoader = require('../../lib/asset-loader');
 var game;
 var panels;
+
+var EXAMPLE_MEMBERS = [
+    new Unit({key: 'infantry-1'}),
+    new Unit({key: 'infantry-1'}),
+    new Unit({key: 'infantry-2'}),
+    new Unit({key: 'armoured-infantry-1'}),
+    new Unit({key: 'armoured-infantry-2'}),
+    new Unit({key: 'mechanized-infantry-1'})
+];
 
 function preload() {
     var assetLoader = new AssetLoader(game, '../assets/');
@@ -18,7 +27,9 @@ function preload() {
 function create() {
     var commanderKey = document.querySelector('#select-commander').value;
     var commander = new Commander({ key: commanderKey });
-    var troop = new Troop({ name: commander.troopName });
+    var troop = new Troop({ commander: commander });
+
+    addExampleMembers(troop);
 
     panels.commanderPanel = createCommanderPanel(commander);
     panels.troopInfoPanel = createTroopInfoPanel(troop);
@@ -28,7 +39,7 @@ function create() {
 function createCommanderPanel(commander) {
     var panel = new CommanderPanel(game, 10, 49);
     panel.render(commander);
-    game.stage.addChild(panel.getDisplayObject());
+    game.stage.addChild(panel);
 
     return panel;
 }
@@ -36,7 +47,7 @@ function createCommanderPanel(commander) {
 function createTroopInfoPanel(troop) {
     var panel = new TroopInfoPanel(game, 154, 49);
     panel.render(troop);
-    game.stage.addChild(panel.getDisplayObject());
+    game.stage.addChild(panel);
 
     return panel;
 }
@@ -44,7 +55,7 @@ function createTroopInfoPanel(troop) {
 function createPersonnelPanel(members) {
     var panel = new PersonnelPanel(game, 154, 145);
     panel.render(members);
-    game.stage.addChild(panel.getDisplayObject());
+    game.stage.addChild(panel);
 
     return panel;
 }
@@ -60,13 +71,16 @@ function init() {
 
     selectCommander.addEventListener('change', function(e) {
         var commander = new Commander({ key: e.target.value });
-        var troop = new Troop({ name: commander.troopName });
+        var troop = new Troop({ commander: commander });
+
+        addExampleMembers(troop);
+
         panels.commanderPanel.render(commander);
         panels.troopInfoPanel.render(troop);
         panels.personnelPanel.render(troop.members);
         selectOrder.value = 'STAY';
-        Array.prototype.forEach.call(allSelectMembers, function(select) {
-            select.value = '';
+        Array.prototype.forEach.call(allSelectMembers, function(select, index) {
+            select.value = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].key || '';
         });
     });
 
@@ -90,6 +104,12 @@ function init() {
     });
 
     return game;
+}
+
+function addExampleMembers(troop) {
+    EXAMPLE_MEMBERS.forEach(function(unit, index) {
+        troop.addMember(unit, index);
+    });
 }
 
 function getSetup() {
@@ -122,23 +142,24 @@ function getSetup() {
 }
 
 function getSelectMember(index) {
+    var key = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].key || '';
     return  index + ': ' +
-            '<select name="member' + index + '" id="select-member-' + index + '" value="">' +
+            '<select name="member' + index + '" id="select-member-' + index + '" value="' + key + '">' +
                 '<option value=""></option>' +
-                '<option value="infantry-1">Infantry 1</option>' +
-                '<option value="infantry-2">Infantry 2</option>' +
-                '<option value="infantry-3">Infantry 3</option>' +
-                '<option value="armoured-infantry-1">Armoured Infantry 1</option>' +
-                '<option value="armoured-infantry-2">Armoured Infantry 2</option>' +
-                '<option value="armoured-infantry-3">Armoured Infantry 3</option>' +
-                '<option value="mechanized-infantry-1">Mech Infantry 1</option>' +
-                '<option value="mechanized-infantry-2">Mech Infantry 2</option>' +
-                '<option value="mechanized-infantry-3">Mech Infantry 3</option>' +
+                '<option ' + (key === 'infantry-1' ? 'selected' : '') + ' value="infantry-1">Infantry 1</option>' +
+                '<option ' + (key === 'infantry-2' ? 'selected' : '') + ' value="infantry-2">Infantry 2</option>' +
+                '<option ' + (key === 'infantry-3' ? 'selected' : '') + ' value="infantry-3">Infantry 3</option>' +
+                '<option ' + (key === 'armoured-infantry-1' ? 'selected' : '') + ' value="armoured-infantry-1">Armoured Infantry 1</option>' +
+                '<option ' + (key === 'armoured-infantry-2' ? 'selected' : '') + ' value="armoured-infantry-2">Armoured Infantry 2</option>' +
+                '<option ' + (key === 'armoured-infantry-3' ? 'selected' : '') + ' value="armoured-infantry-3">Armoured Infantry 3</option>' +
+                '<option ' + (key === 'mechanized-infantry-1' ? 'selected' : '') + ' value="mechanized-infantry-1">Mech Infantry 1</option>' +
+                '<option ' + (key === 'mechanized-infantry-2' ? 'selected' : '') + ' value="mechanized-infantry-2">Mech Infantry 2</option>' +
+                '<option ' + (key === 'mechanized-infantry-3' ? 'selected' : '') + ' value="mechanized-infantry-3">Mech Infantry 3</option>' +
             '</select>';
 }
 
 function getName() {
-    return 'Team Info Example';
+    return 'Troop Info Example';
 }
 
 module.exports = {
