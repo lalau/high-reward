@@ -33,28 +33,25 @@ function create() {
 
     panels.commanderPanel = createCommanderPanel(commander);
     panels.troopInfoPanel = createTroopInfoPanel(troop);
-    panels.personnelPanel = createPersonnelPanel(troop.members);
+    panels.personnelPanel = createPersonnelPanel(troop);
 }
 
 function createCommanderPanel(commander) {
-    var panel = new CommanderPanel(game, 10, 49);
-    panel.render(commander);
+    var panel = new CommanderPanel(game, 10, 49, commander);
     game.stage.addChild(panel);
 
     return panel;
 }
 
 function createTroopInfoPanel(troop) {
-    var panel = new TroopInfoPanel(game, 154, 49);
-    panel.render(troop);
+    var panel = new TroopInfoPanel(game, 154, 49, troop);
     game.stage.addChild(panel);
 
     return panel;
 }
 
-function createPersonnelPanel(members) {
-    var panel = new PersonnelPanel(game, 154, 145);
-    panel.render(members);
+function createPersonnelPanel(troop) {
+    var panel = new PersonnelPanel(game, 154, 145, troop);
     game.stage.addChild(panel);
 
     return panel;
@@ -75,9 +72,9 @@ function init() {
 
         addExampleMembers(troop);
 
-        panels.commanderPanel.render(commander);
-        panels.troopInfoPanel.render(troop);
-        panels.personnelPanel.render(troop.members);
+        panels.commanderPanel.setCommander(commander);
+        panels.troopInfoPanel.setTroop(troop);
+        panels.personnelPanel.setTroop(troop);
         selectOrder.value = 'STAY';
         Array.prototype.forEach.call(allSelectMembers, function(select, index) {
             select.value = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].key || '';
@@ -86,7 +83,6 @@ function init() {
 
     selectOrder.addEventListener('change', function(e) {
         panels.troopInfoPanel._troop.order = Troop.Order[e.target.value];
-        panels.troopInfoPanel.render();
     });
 
     selectMember.addEventListener('change', function(e) {
@@ -100,7 +96,6 @@ function init() {
         } else {
             members[index] = null;
         }
-        panels.personnelPanel.render(members);
     });
 
     return game;

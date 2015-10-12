@@ -41,16 +41,14 @@ function create() {
 }
 
 function createTroopFormationSetupPanel(troop) {
-    var panel = new TroopFormationSetupPanel(game, 178, 17);
-    panel.render(troop);
+    var panel = new TroopFormationSetupPanel(game, 178, 17, troop);
     game.stage.addChild(panel);
 
     return panel;
 }
 
 function createTroopFormationPanel(troop) {
-    var panel = new TroopFormationPanel(game, 178, 49);
-    panel.render(troop);
+    var panel = new TroopFormationPanel(game, 178, 49, troop);
     game.stage.addChild(panel);
 
     return panel;
@@ -58,38 +56,27 @@ function createTroopFormationPanel(troop) {
 
 function createTroopFormationInfoPanel() {
     var panel = new TroopFormationInfoPanel(game, 178, 265);
-    panel.render();
     game.stage.addChild(panel);
 
     return panel;
 }
 
 function createTroopFormationTitlePanel(troop) {
-    var panel = new TroopFormationTitlePanel(game, 178, 361);
-    panel.render(troop);
+    var panel = new TroopFormationTitlePanel(game, 178, 361, troop);
     game.stage.addChild(panel);
 
     return panel;
 }
 
 function initPanelEvents(troop) {
-    panels.troopFormationSetupPanel.events.onFormationChange.add(function(formationIndex) {
-        troop.formationIndex = formationIndex;
-        panels.troopFormationPanel.render();
-    });
-
-    panels.troopFormationSetupPanel.events.onTacticChange.add(function(tactic) {
-        troop.tactic = tactic;
-    });
-
     panels.troopFormationPanel.events.onMovingUnitStart.add(function(unit) {
         panels.troopFormationSetupPanel.disableButtons();
-        panels.troopFormationInfoPanel.render(unit);
+        panels.troopFormationInfoPanel.setUnit(unit);
     });
 
     panels.troopFormationPanel.events.onMovingUnitEnd.add(function() {
         panels.troopFormationSetupPanel.enableButtons();
-        panels.troopFormationInfoPanel.render(null);
+        panels.troopFormationInfoPanel.setUnit(null);
         updateDebugInfo(troop);
     });
 }
