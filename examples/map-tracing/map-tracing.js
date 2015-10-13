@@ -1,7 +1,7 @@
 'use strict';
 
 var AssetLoader = require('../../lib/asset-loader');
-var Navicon = require('../../lib/navicon');
+var Navicon = require('../../lib/components/navicon');
 var traceMoves = require('./trace-zelerd');
 var actionQueue;
 var traceButton;

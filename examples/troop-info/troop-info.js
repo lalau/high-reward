@@ -1,22 +1,20 @@
 'use strict';
 
-var CommanderPanel = require('../../lib/panels/commander-panel');
-var TroopInfoPanel = require('../../lib/panels/troop-info-panel');
-var PersonnelPanel = require('../../lib/panels/personnel-panel');
-var Commander = require('../../lib/commander');
-var Unit = require('../../lib/unit');
-var Troop = require('../../lib/troop');
+var TroopInfoScreen = require('../../lib/screens/troop-info/troop-info-screen');
+var Commander = require('../../lib/models/commander');
+var Unit = require('../../lib/models/unit');
+var Troop = require('../../lib/models/troop');
 var AssetLoader = require('../../lib/asset-loader');
 var game;
-var panels;
+var screen;
 
 var EXAMPLE_MEMBERS = [
-    new Unit({key: 'infantry-1'}),
-    new Unit({key: 'infantry-1'}),
-    new Unit({key: 'infantry-2'}),
-    new Unit({key: 'armoured-infantry-1'}),
-    new Unit({key: 'armoured-infantry-2'}),
-    new Unit({key: 'mechanized-infantry-1'})
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-2'}) },
+    { unit: new Unit({key: 'armoured-infantry-1'}) },
+    { unit: new Unit({key: 'armoured-infantry-2'}) },
+    { unit: new Unit({key: 'mechanized-infantry-1'}) }
 ];
 
 function preload() {
@@ -25,36 +23,11 @@ function preload() {
 }
 
 function create() {
-    var commanderKey = document.querySelector('#select-commander').value;
-    var commander = new Commander({ key: commanderKey });
-    var troop = new Troop({ commander: commander });
+    var commander = new Commander({ key: document.querySelector('#select-commander').value });
+    var troop = new Troop(commander, EXAMPLE_MEMBERS);
+    screen = new TroopInfoScreen(game, troop);
 
-    addExampleMembers(troop);
-
-    panels.commanderPanel = createCommanderPanel(commander);
-    panels.troopInfoPanel = createTroopInfoPanel(troop);
-    panels.personnelPanel = createPersonnelPanel(troop);
-}
-
-function createCommanderPanel(commander) {
-    var panel = new CommanderPanel(game, 10, 49, commander);
-    game.stage.addChild(panel);
-
-    return panel;
-}
-
-function createTroopInfoPanel(troop) {
-    var panel = new TroopInfoPanel(game, 154, 49, troop);
-    game.stage.addChild(panel);
-
-    return panel;
-}
-
-function createPersonnelPanel(troop) {
-    var panel = new PersonnelPanel(game, 154, 145, troop);
-    game.stage.addChild(panel);
-
-    return panel;
+    game.stage.addChild(screen);
 }
 
 function init() {
@@ -63,33 +36,29 @@ function init() {
     var selectMember = document.querySelector('#select-member');
     var allSelectMembers = selectMember.querySelectorAll('select');
 
-    panels = {};
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', { preload: preload, create: create }, false, false);
 
     selectCommander.addEventListener('change', function(e) {
         var commander = new Commander({ key: e.target.value });
-        var troop = new Troop({ commander: commander });
+        var troop = new Troop(commander, EXAMPLE_MEMBERS);
 
-        addExampleMembers(troop);
-
-        panels.commanderPanel.setCommander(commander);
-        panels.troopInfoPanel.setTroop(troop);
-        panels.personnelPanel.setTroop(troop);
+        screen.setTroop(troop);
         selectOrder.value = 'STAY';
         Array.prototype.forEach.call(allSelectMembers, function(select, index) {
-            select.value = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].key || '';
+            var unit = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].unit;
+            select.value = unit && unit.key || '';
         });
     });
 
     selectOrder.addEventListener('change', function(e) {
-        panels.troopInfoPanel._troop.order = Troop.Order[e.target.value];
+        screen._troop.order = Troop.Order[e.target.value];
     });
 
     selectMember.addEventListener('change', function(e) {
         var target = e.target;
         var index = target.id.replace('select-member-', '');
         var unitKey = target.value;
-        var members = panels.troopInfoPanel._troop.members;
+        var members = screen._troop.members;
 
         if (unitKey) {
             members[index] = new Unit({ key: unitKey });
@@ -99,12 +68,6 @@ function init() {
     });
 
     return game;
-}
-
-function addExampleMembers(troop) {
-    EXAMPLE_MEMBERS.forEach(function(unit, index) {
-        troop.addMember(unit, index);
-    });
 }
 
 function getSetup() {
@@ -137,7 +100,8 @@ function getSetup() {
 }
 
 function getSelectMember(index) {
-    var key = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].key || '';
+    var unit = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].unit;
+    var key = unit && unit.key || '';
     return  index + ': ' +
             '<select name="member' + index + '" id="select-member-' + index + '" value="' + key + '">' +
                 '<option value=""></option>' +

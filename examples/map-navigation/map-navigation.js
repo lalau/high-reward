@@ -1,8 +1,8 @@
 'use strict';
 
 var AssetLoader = require('../../lib/asset-loader');
-var Navicon = require('../../lib/navicon');
-var Region = require('../../lib/region');
+var Navicon = require('../../lib/components/navicon');
+var Region = require('../../lib/components/region');
 var grid = require('../../configs/maps/zelerd/grid');
 var pois = require('../../configs/maps/zelerd/poi');
 var poiSelect;
