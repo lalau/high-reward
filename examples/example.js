@@ -7,6 +7,10 @@ var troopInfo = require('./troop-info/troop-info.js');
 var mapTracing = require('./map-tracing/map-tracing.js');
 var mapNavigation = require('./map-navigation/map-navigation.js');
 var troopFormation = require('./troop-formation/troop-formation.js');
+var battle = require('./battle/battle.js');
+var unitAnimation = require('./unit-animation/unit-animation.js');
+var damageRoll = require('./damage-roll/damage-roll.js');
+var battleController = require('./battle-controller/battle-controller.js');
 var contentUpdated = false;
 var game;
 
@@ -41,6 +45,18 @@ function getExampleLib(hash) {
         break;
     case '#troop-formation':
         exampleLib = troopFormation;
+        break;
+    case '#battle':
+        exampleLib = battle;
+        break;
+    case '#unit-animation':
+        exampleLib = unitAnimation;
+        break;
+    case '#damage-roll':
+        exampleLib = damageRoll;
+        break;
+    case '#battle-controller':
+        exampleLib = battleController;
         break;
     default:
         exampleLib = troopInfo;
