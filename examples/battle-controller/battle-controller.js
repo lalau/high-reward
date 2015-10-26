@@ -61,14 +61,13 @@ function formatRoundInfo(battle) {
 
     battle._troops.forEach(function(troop, troopIndex) {
         var formation = formations[troop.formationIndex];
-        var commanderSlotIndex = troop.getSlotIndex(troop.commander);
         var row;
 
         troop.members.forEach(function(unit, unitIndex) {
             var slotIndex = troop.getSlotIndex(unit);
             var row = rows[unitIndex] || [];
             rows[unitIndex] = row;
-            row.push(unitIndex,
+            row.push(unitIndex === 0 ? 'L' : unitIndex,
                 unit.attrs.hp,
                 JSON.stringify(formation.slots[slotIndex]), '',
                 status.suppressedUnits.indexOf(unit) >= 0 ? 'x' : '',
@@ -78,28 +77,17 @@ function formatRoundInfo(battle) {
                 ''
             );
         });
-
-        row = rows[troop.members.length] || [];
-        rows[troop.members.length] = row;
-        row.push('L',
-            troop.commander.attrs.hp,
-            JSON.stringify(formation.slots[commanderSlotIndex]), '',
-            status.suppressedUnits.indexOf(troop.commander) >= 0 ? 'x' : '',
-            status.candidatesWaitingToFire.filter(function(candidate) {
-                return candidate.unit === troop.commander;
-            }).length > 0 ? 'x' : '',
-            ''
-        );
     });
 
     status.firingCandidates.forEach(function(candidate) {
         var troopIndex = candidate.troopIndex;
         var troop = battle._troops[troopIndex];
         var targetTroop = battle._troops[troopIndex ? 0 : 1];
-        var rowIndex = candidate.unitIndex === 'L' ? 10 : candidate.unitIndex;
+        var rowIndex = candidate.unitIndex;
         var columnIndex = troopIndex ? 10 : 3;
+        var targetMemberIndex = targetTroop.getMemberIndex(candidate.target);
 
-        rows[rowIndex][columnIndex] = targetTroop.getMemberIndex(candidate.target) + ' / ' + (candidate.suppressingRound || 3);
+        rows[rowIndex][columnIndex] = (targetMemberIndex === 0 ? 'L' : targetMemberIndex) + ' / ' + (candidate.suppressingRound || 3);
     });
 
     rows.unshift(['Unit Index', 'HP', 'Slot Position', 'Firing At', 'Suppressed', 'Waiting', '', 'Unit Index', 'HP', 'Slot Position', 'Firing At', 'Suppressed', 'Waiting', '']);

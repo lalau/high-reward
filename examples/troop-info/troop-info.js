@@ -102,8 +102,10 @@ function getSetup() {
 function getSelectMember(index) {
     var unit = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].unit;
     var key = unit && unit.key || '';
-    return  index + ': ' +
-            '<select name="member' + index + '" id="select-member-' + index + '" value="' + key + '">' +
+    var memberIndex = index + 1;
+
+    return  memberIndex + ': ' +
+            '<select name="member' + memberIndex + '" id="select-member-' + memberIndex + '" value="' + key + '">' +
                 '<option value=""></option>' +
                 '<option ' + (key === 'infantry-1' ? 'selected' : '') + ' value="infantry-1">Infantry 1</option>' +
                 '<option ' + (key === 'infantry-2' ? 'selected' : '') + ' value="infantry-2">Infantry 2</option>' +
