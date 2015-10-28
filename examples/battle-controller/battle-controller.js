@@ -17,7 +17,7 @@ var EXAMPLE_MEMBERS_1 = [
     { unit: new Unit({key: 'infantry-1'}) },
     { unit: new Unit({key: 'infantry-1'}) },
     { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) }
 ];
 
 var EXAMPLE_MEMBERS_2 = [
@@ -59,17 +59,21 @@ function formatRoundInfo(battle) {
     var status = battle.getStatus();
     var rows = [];
 
-    battle._troops.forEach(function(troop, troopIndex) {
+    if (status.wonTroopIndex !== undefined) {
+        return 'Battle ended. Troop ' + status.wonTroopIndex + ' won.\n';
+    }
+
+    battle._troops.forEach(function(troop) {
         var formation = formations[troop.formationIndex];
-        var row;
 
         troop.members.forEach(function(unit, unitIndex) {
             var slotIndex = troop.getSlotIndex(unit);
             var row = rows[unitIndex] || [];
+            var slotPosition = formation.slots[slotIndex];
             rows[unitIndex] = row;
             row.push(unitIndex === 0 ? 'L' : unitIndex,
                 unit.attrs.hp,
-                JSON.stringify(formation.slots[slotIndex]), '',
+                slotPosition.gx + ',' + slotPosition.gy, '', '',
                 status.suppressedUnits.indexOf(unit) >= 0 ? 'x' : '',
                 status.candidatesWaitingToFire.filter(function(candidate) {
                     return candidate.unit === unit;
@@ -81,18 +85,20 @@ function formatRoundInfo(battle) {
 
     status.firingCandidates.forEach(function(candidate) {
         var troopIndex = candidate.troopIndex;
-        var troop = battle._troops[troopIndex];
         var targetTroop = battle._troops[troopIndex ? 0 : 1];
         var rowIndex = candidate.unitIndex;
-        var columnIndex = troopIndex ? 10 : 3;
+        var columnIndex = troopIndex ? 11 : 3;
+        var infoColumnIndex = troopIndex ? 12 : 4;
         var targetMemberIndex = targetTroop.getMemberIndex(candidate.target);
+        var fireStatus = candidate.fireStatus || {};
 
         rows[rowIndex][columnIndex] = (targetMemberIndex === 0 ? 'L' : targetMemberIndex) + ' / ' + (candidate.suppressingRound || 3);
+        rows[rowIndex][infoColumnIndex] = fireStatus.damage ? -fireStatus.damage : (fireStatus.missed ? 'miss' : '');
     });
 
-    rows.unshift(['Unit Index', 'HP', 'Slot Position', 'Firing At', 'Suppressed', 'Waiting', '', 'Unit Index', 'HP', 'Slot Position', 'Firing At', 'Suppressed', 'Waiting', '']);
+    rows.unshift(['Index', 'HP', 'Position', 'Firing', 'Info', 'Suppressed', 'Waiting', '', 'Index', 'HP', 'Position', 'Firing', 'Info', 'Suppressed', 'Waiting', '']);
 
-    return 'Round ' + status.round + '\n' + table(rows, {hsep: '|', align: ['c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c']});
+    return 'Round ' + status.round + '\n' + table(rows, {hsep: '|', align: ['c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c']});
 }
 
 function getSetup() {

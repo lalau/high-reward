@@ -11,6 +11,19 @@ var screen;
 var EXAMPLE_MEMBERS_1 = [
     { unit: new Unit({key: 'infantry-1'}) },
     { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) }
+];
+
+var EXAMPLE_MEMBERS_2 = [
+    { unit: new Unit({key: 'infantry-1'}) },
+    { unit: new Unit({key: 'infantry-1'}) },
     { unit: new Unit({key: 'infantry-2'}) },
     { unit: new Unit({key: 'armoured-infantry-1'}) },
     { unit: new Unit({key: 'armoured-infantry-2'}) },
@@ -21,28 +34,16 @@ var EXAMPLE_MEMBERS_1 = [
     { unit: new Unit({key: 'mechanized-infantry-1'}) }
 ];
 
-var EXAMPLE_MEMBERS_2 = [
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-];
-
 function preload() {
     var assetLoader = new AssetLoader(game, '../assets/');
     assetLoader.load();
 }
 
 function create() {
-    var commander = new Commander({ key: 'moro' });
-    var troop1 = new Troop(commander, EXAMPLE_MEMBERS_1);
-    var troop2 = new Troop(commander, EXAMPLE_MEMBERS_2);
+    var commander1 = new Commander({ key: 'moro' });
+    var commander2 = new Commander({ key: 'moro' });
+    var troop1 = new Troop(commander1, EXAMPLE_MEMBERS_1);
+    var troop2 = new Troop(commander2, EXAMPLE_MEMBERS_2);
 
     troop1.formationIndex = 1;
     troop2.formationIndex = 10;
@@ -61,6 +62,7 @@ function init() {
 }
 
 function start() {
+    document.querySelector('#start').disabled = true;
     screen.start();
 }
 

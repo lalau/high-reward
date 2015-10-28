@@ -7,7 +7,7 @@ var troopInfo = require('./troop-info/troop-info.js');
 var mapTracing = require('./map-tracing/map-tracing.js');
 var mapNavigation = require('./map-navigation/map-navigation.js');
 var troopFormation = require('./troop-formation/troop-formation.js');
-var battle = require('./battle/battle.js');
+var battleScreen = require('./battle-screen/battle-screen.js');
 var unitAnimation = require('./unit-animation/unit-animation.js');
 var damageRoll = require('./damage-roll/damage-roll.js');
 var battleController = require('./battle-controller/battle-controller.js');
@@ -46,8 +46,8 @@ function getExampleLib(hash) {
     case '#troop-formation':
         exampleLib = troopFormation;
         break;
-    case '#battle':
-        exampleLib = battle;
+    case '#battle-screen':
+        exampleLib = battleScreen;
         break;
     case '#unit-animation':
         exampleLib = unitAnimation;
@@ -71,6 +71,12 @@ function updateContent(href) {
 }
 
 document.querySelector('#example-list').addEventListener('click', function(e) {
+    var href = e.target.href;
+
+    if (!href) {
+        return;
+    }
+
     updateContent(e.target.href);
     contentUpdated = true;
 });
