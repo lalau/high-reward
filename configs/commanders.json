@@ -75,5 +75,45 @@
             "defence": 114,
             "building": 137
         }
+    },
+    "tilum": {
+        "key": "tilum",
+        "fullName": "Tilum Rem",
+        "shortName": "Sal",
+        "troopName": "Rem's Mercant Corps",
+        "attributes": {
+            "hp": 18,
+            "shoot": 7,
+            "defence": 8,
+            "trading": 12,
+            "performance": 0,
+            "building": 0
+        },
+        "max": {
+            "hp": 205,
+            "shoot": 80,
+            "defence": 91,
+            "trading": 137
+        }
+    },
+    "daisy": {
+        "key": "daisy",
+        "fullName": "Daisy Laide",
+        "shortName": "Daisy",
+        "troopName": "Daisy's Dance Company",
+        "attributes": {
+            "hp": 18,
+            "shoot": 5,
+            "defence": 6,
+            "trading": 0,
+            "performance": 12,
+            "building": 0
+        },
+        "max": {
+            "hp": 205,
+            "shoot": 57,
+            "defence": 68,
+            "performance": 137
+        }
     }
 }

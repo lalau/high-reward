@@ -9,13 +9,13 @@
         "x": 352,
         "y": 310,
         "type": "city",
-        "name": "Saranda"
+        "name": "Zelerd City"
     },
     {
         "x": 280,
         "y": 274,
         "type": "city",
-        "name": "West Saranda"
+        "name": "West Zelerd City"
     },
     {
         "x": 177,
@@ -39,7 +39,7 @@
         "x": 296,
         "y": 162,
         "type": "city",
-        "name": "Old Saranda"
+        "name": "Old Zelerd City"
     },
     {
         "x": 313,

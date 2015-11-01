@@ -7,6 +7,7 @@ var Commander = require('../../lib/models/commander');
 var Troop = require('../../lib/models/troop');
 var game;
 var screen;
+var controlButton;
 
 var EXAMPLE_MEMBERS_1 = [
     { unit: new Unit({key: 'infantry-1'}) },
@@ -56,18 +57,32 @@ function create() {
 function init() {
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', { preload: preload, create: create }, false, false);
 
-    document.querySelector('#start').addEventListener('click', start);
+    controlButton = document.querySelector('#control');
+    controlButton.addEventListener('click', control);
 
     return game;
 }
 
-function start() {
-    document.querySelector('#start').disabled = true;
-    screen.start();
+function control() {
+    var battle = screen._battle;
+
+    if (!battle) {
+        controlButton.innerHTML = 'Pause';
+        screen.start();
+        return;
+    }
+
+    if (screen.isPaused()) {
+        controlButton.innerHTML = 'Pause';
+        screen.resume();
+    } else {
+        controlButton.innerHTML = 'Resume';
+        screen.pause();
+    }
 }
 
 function getSetup() {
-    return '<button id="start">Start</button>';
+    return '<button id="control">Start</button>';
 }
 
 function getName() {

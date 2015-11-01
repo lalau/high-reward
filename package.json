@@ -4,7 +4,8 @@
   "description": "High Reward Game Remake",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/wzrd/bin.js examples/example.js",
+    "start-example": "./node_modules/wzrd/bin.js examples/example.js",
+    "start": "./node_modules/wzrd/bin.js game/game.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "validate": "npm ls"
