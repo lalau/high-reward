@@ -1,46 +1,35 @@
 'use strict';
 
-var TroopFormationScreen = require('../../lib/screens/troop-formation/troop-formation-screen');
-var AssetLoader = require('../../lib/asset-loader');
-var Unit = require('../../lib/models/unit');
-var Commander = require('../../lib/models/commander');
-var Troop = require('../../lib/models/troop');
+var InitGame = require('../../lib/states/init-game');
+var TroopFormation = require('../../lib/states/troop-formation');
+var gameStateUtil = require('../../lib/utils/game-state-util');
 var game;
 
-var EXAMPLE_MEMBERS = [
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-2'}) },
-    { unit: new Unit({key: 'armoured-infantry-1'}) },
-    { unit: new Unit({key: 'armoured-infantry-2'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) }
-];
-
-function preload() {
-    var assetLoader = new AssetLoader(game, '../assets/');
-    assetLoader.load();
-}
-
-function create() {
-    var commander = new Commander({ key: 'moro' });
-    var troop = new Troop(commander, EXAMPLE_MEMBERS);
-    var screen = new TroopFormationScreen(game, troop);
-
-    game.stage.addChild(screen);
-
-    updateDebugInfo(troop);
-    screen._panels.formation.events.onMovingUnitEnd.add(function() {
-        updateDebugInfo(troop);
-    });
-}
-
 function init() {
-    game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', { preload: preload, create: create }, false, false);
+    game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
+    game.state.add(InitGame.NAME, InitGame);
+    game.state.add(TroopFormation.NAME, TroopFormation);
+
+    game.state.start(InitGame.NAME, undefined, undefined, function() {
+        game.gameState = gameStateUtil.getNewState(game);
+        game.state.start(TroopFormation.NAME, undefined, undefined, 'moro');
+        updateDebugInfo();
+        var readyInterval = setInterval(function() {
+            var troopFormation = game.state.states[game.state.current];
+            if (troopFormation._screen) {
+                clearInterval(readyInterval);
+                troopFormation._screen._panels.formation.events.onMovingUnitEnd.add(function() {
+                    updateDebugInfo();
+                });
+            }
+        });
+    });
 
     return game;
 }
 
-function updateDebugInfo(troop) {
+function updateDebugInfo() {
+    var troop = game.gameState.troops.moro;
     document.querySelector('#formation-info').innerHTML = 'Formation: ' + JSON.stringify(troop.formation);
 }
 

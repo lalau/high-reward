@@ -1,0 +1,11 @@
+{
+    "arrival": [
+        "Arrived ${name}!\nEntering now."
+    ],
+    "enemy-encounter": [
+        "It's ${name}!\nPrepare for battle!"
+    ],
+    "battle-win-hard": [
+        "We barely won...\nAcquired ${amount}G!"
+    ]
+}

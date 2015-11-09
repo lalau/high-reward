@@ -5,8 +5,10 @@ var Navicon = require('../../lib/components/navicon');
 var Region = require('../../lib/components/region');
 var grid = require('../../configs/maps/zelerd/grid');
 var pois = require('../../configs/maps/zelerd/poi');
+var actionQueue = [];
 var poiSelect;
 var region;
+var navicon;
 var game;
 
 function preload() {
@@ -15,31 +17,19 @@ function preload() {
 }
 
 function create() {
-    var navicon = new Navicon(game, 'moro', 352, 310);
-
-    this._navicons = {
-        moro: navicon
-    };
-    this._currentNavicon = 'moro';
-    this.getCurrentNavicon = function() {
-        return this._navicons[this._currentNavicon];
-    };
-
-    this._actionQueue = [];
-    this.clearActionQueue = function() {
-        this._actionQueue = [];
-    };
-    this.scheduleAction = function(action) {
-        this._actionQueue.push(action);
-    };
-
     region = new Region(game, 'zelerd', grid, pois);
-    region.addChild(navicon);
+    navicon = region.addChild(new Navicon(game, 'moro', 352, 310));
     game.stage.addChild(region);
+
+    region.onClick.add(function(e) {
+        if (e && e.point) {
+            navigate(e.point.x, e.point.y);
+        }
+    });
 }
 
 function update() {
-    var action = this._actionQueue.shift();
+    var action = actionQueue.shift();
 
     if (action) {
         action();
@@ -68,7 +58,21 @@ function handleNavigate() {
         }
     });
 
-    region._prepareNavigate(navigatePoi.x, navigatePoi.y);
+    navigate(navigatePoi.x, navigatePoi.y);
+}
+
+function navigate(x, y) {
+    region.pathfinder.findPath(navicon.x, navicon.y, x, y, function(points) {
+        if (!points) {
+            reurn;
+        }
+
+        points.forEach(function(point){
+            actionQueue.push(function() {
+                navicon.moveTo(point.x, point.y);
+            });
+        })
+    });
 }
 
 function init() {

@@ -12,6 +12,8 @@ var unitAnimation = require('./unit-animation/unit-animation.js');
 var damageRoll = require('./damage-roll/damage-roll.js');
 var battleController = require('./battle-controller/battle-controller.js');
 var conversation = require('./conversation/conversation.js');
+var information = require('./information/information.js');
+var clock = require('./clock/clock.js');
 var contentUpdated = false;
 var game;
 
@@ -61,6 +63,12 @@ function getExampleLib(hash) {
         break;
     case '#conversation':
         exampleLib = conversation;
+        break;
+    case '#clock':
+        exampleLib = clock;
+        break;
+    case '#information':
+        exampleLib = information;
         break;
     default:
         exampleLib = troopInfo;

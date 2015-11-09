@@ -38,8 +38,8 @@ function getSetup() {
                 ' ' +
                 '<select name="script" id="select-script" value="moro">' +
                     '<option value=""></option>' +
-                    '<option value="introduction">Introduction</option>'
-                '</select>'
+                    '<option value="introduction">Introduction</option>' +
+                '</select>' +
             '</div>';
 }
 

@@ -1,61 +1,22 @@
 'use strict';
 
-var BattleScreen = require('../../lib/screens/battle/battle-screen');
-var AssetLoader = require('../../lib/asset-loader');
-var Unit = require('../../lib/models/unit');
-var Commander = require('../../lib/models/commander');
-var Troop = require('../../lib/models/troop');
+var InitGame = require('../../lib/states/init-game');
+var Battle = require('../../lib/states/battle');
+var gameStateUtil = require('../../lib/utils/game-state-util');
+var battleUtil = require('../../lib/utils/battle-util');
 var game;
-var screen;
 var controlButton;
 
-var EXAMPLE_MEMBERS_1 = [
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) }
-];
-
-var EXAMPLE_MEMBERS_2 = [
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-2'}) },
-    { unit: new Unit({key: 'armoured-infantry-1'}) },
-    { unit: new Unit({key: 'armoured-infantry-2'}) },
-    { unit: new Unit({key: 'armoured-infantry-2'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) }
-];
-
-function preload() {
-    var assetLoader = new AssetLoader(game, '../assets/');
-    assetLoader.load();
-}
-
-function create() {
-    var commander1 = new Commander({ key: 'moro' });
-    var commander2 = new Commander({ key: 'moro' });
-    var troop1 = new Troop(commander1, EXAMPLE_MEMBERS_1);
-    var troop2 = new Troop(commander2, EXAMPLE_MEMBERS_2);
-
-    troop1.formationIndex = 1;
-    troop2.formationIndex = 10;
-
-    screen = new BattleScreen(game, troop1, troop2);
-
-    game.stage.addChild(screen);
-}
-
 function init() {
-    game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', { preload: preload, create: create }, false, false);
+    game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
+    game.state.add(InitGame.NAME, InitGame);
+    game.state.add(Battle.NAME, Battle);
+
+    game.state.start(InitGame.NAME, undefined, undefined, function() {
+        game.gameState = gameStateUtil.getNewState(game);
+        game.state.start(Battle.NAME, undefined, undefined, battleUtil.getRegionalTroop(), game.gameState.troops.moro);
+        controlButton.innerHTML = 'Pause';
+    });
 
     controlButton = document.querySelector('#control');
     controlButton.addEventListener('click', control);
@@ -64,25 +25,19 @@ function init() {
 }
 
 function control() {
-    var battle = screen._battle;
+    var battleScreen = game.state.states[game.state.current]._screen;
 
-    if (!battle) {
+    if (battleScreen.isPaused()) {
         controlButton.innerHTML = 'Pause';
-        screen.start();
-        return;
-    }
-
-    if (screen.isPaused()) {
-        controlButton.innerHTML = 'Pause';
-        screen.resume();
+        battleScreen.resume();
     } else {
         controlButton.innerHTML = 'Resume';
-        screen.pause();
+        battleScreen.pause();
     }
 }
 
 function getSetup() {
-    return '<button id="control">Start</button>';
+    return '<button id="control"></button>';
 }
 
 function getName() {

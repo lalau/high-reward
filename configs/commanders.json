@@ -10,7 +10,8 @@
             "defence": 11,
             "trading": 0,
             "performance": 0,
-            "building": 0
+            "building": 0,
+            "expert": 0
         },
         "max": {
             "hp": 342,
@@ -29,7 +30,8 @@
             "defence": 9,
             "trading": 0,
             "performance": 0,
-            "building": 0
+            "building": 0,
+            "expert": 0
         },
         "max": {
             "hp": 365,
@@ -48,7 +50,8 @@
             "defence": 7,
             "trading": 0,
             "performance": 0,
-            "building": 0
+            "building": 0,
+            "expert": 0
         },
         "max": {
             "hp": 228,
@@ -67,7 +70,8 @@
             "defence": 10,
             "trading": 0,
             "performance": 0,
-            "building": 12
+            "building": 12,
+            "expert": 0
         },
         "max": {
             "hp": 342,
@@ -87,7 +91,8 @@
             "defence": 8,
             "trading": 12,
             "performance": 0,
-            "building": 0
+            "building": 0,
+            "expert": 0
         },
         "max": {
             "hp": 205,
@@ -107,7 +112,8 @@
             "defence": 6,
             "trading": 0,
             "performance": 12,
-            "building": 0
+            "building": 0,
+            "expert": 0
         },
         "max": {
             "hp": 205,

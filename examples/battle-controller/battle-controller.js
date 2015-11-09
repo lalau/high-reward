@@ -40,8 +40,8 @@ function init() {
     var troop2 = new Troop(commander2, EXAMPLE_MEMBERS_2);
     var battle;
 
-    troop1.formationIndex = 1;
-    troop2.formationIndex = 10;
+    troop1.formationIndex = 6;
+    troop2.formationIndex = 6;
 
     battle = new BattleController(troop1, troop2);
 

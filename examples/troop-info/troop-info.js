@@ -1,64 +1,46 @@
 'use strict';
 
-var TroopInfoScreen = require('../../lib/screens/troop-info/troop-info-screen');
-var Commander = require('../../lib/models/commander');
+var InitGame = require('../../lib/states/init-game');
+var TroopInfo = require('../../lib/states/troop-info');
+var gameStateUtil = require('../../lib/utils/game-state-util');
 var Unit = require('../../lib/models/unit');
 var Troop = require('../../lib/models/troop');
-var AssetLoader = require('../../lib/asset-loader');
 var game;
-var screen;
-
-var EXAMPLE_MEMBERS = [
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-2'}) },
-    { unit: new Unit({key: 'armoured-infantry-1'}) },
-    { unit: new Unit({key: 'armoured-infantry-2'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) }
-];
-
-function preload() {
-    var assetLoader = new AssetLoader(game, '../assets/');
-    assetLoader.load();
-}
-
-function create() {
-    var commander = new Commander({ key: document.querySelector('#select-commander').value });
-    var troop = new Troop(commander, EXAMPLE_MEMBERS);
-    screen = new TroopInfoScreen(game, troop);
-
-    game.stage.addChild(screen);
-}
 
 function init() {
     var selectCommander = document.querySelector('#select-commander');
     var selectOrder = document.querySelector('#select-order');
     var selectMember = document.querySelector('#select-member');
-    var allSelectMembers = selectMember.querySelectorAll('select');
 
-    game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', { preload: preload, create: create }, false, false);
+    game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
+    game.state.add(InitGame.NAME, InitGame);
+    game.state.add(TroopInfo.NAME, TroopInfo);
+
+    game.state.start(InitGame.NAME, undefined, undefined, function() {
+        game.gameState = gameStateUtil.getNewState(game);
+        game.state.start(TroopInfo.NAME, undefined, undefined, 'moro');
+        updateSetup('moro');
+    });
 
     selectCommander.addEventListener('change', function(e) {
-        var commander = new Commander({ key: e.target.value });
-        var troop = new Troop(commander, EXAMPLE_MEMBERS);
+        var troopInfoScreen = game.state.states[game.state.current]._screen;
+        var commanderKey = e.target.value;
+        var commander;
 
-        screen.setTroop(troop);
-        selectOrder.value = 'STAY';
-        Array.prototype.forEach.call(allSelectMembers, function(select, index) {
-            var unit = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].unit;
-            select.value = unit && unit.key || '';
-        });
+        troopInfoScreen.setTroop(game.gameState.troops[commanderKey]);
+        updateSetup(commanderKey);
     });
 
     selectOrder.addEventListener('change', function(e) {
-        screen._troop.order = Troop.Order[e.target.value];
+        var commanderKey = selectCommander.value;
+        game.gameState.troops[commanderKey].order = e.target.value;
     });
 
     selectMember.addEventListener('change', function(e) {
         var target = e.target;
         var index = target.id.replace('select-member-', '');
         var unitKey = target.value;
-        var members = screen._troop.members;
+        var members = game.gameState.troops[selectCommander.value].members;
 
         if (unitKey) {
             members[index] = new Unit({ key: unitKey });
@@ -70,12 +52,24 @@ function init() {
     return game;
 }
 
+function updateSetup(commanderKey) {
+    var troop = game.gameState.troops[commanderKey];
+
+    troop.members.forEach(function(member, index) {
+        if (member && member.type !== 'commander') {
+            document.querySelector('#select-member-' + index).value = member.key;
+        }
+    });
+
+    document.querySelector('#select-order').value = troop.order;
+}
+
 function getSetup() {
     var selectMembers = '';
     var memberCount;
 
     for (memberCount = 0; memberCount < 10; memberCount++) {
-        selectMembers += '<li style="display:inline-block;">' + getSelectMember(memberCount) + '</li> ';
+        selectMembers += '<li style="display:inline-block;">' + getSelectMember(memberCount + 1) + '</li> ';
     }
 
     return  '<form>' +
@@ -89,9 +83,9 @@ function getSetup() {
                 ' ' +
                 '<label for="select-order">Order:</label>' +
                 '<select name="order" id="select-order" value="STAY">' +
-                    '<option value="STAY">Stay</option>' +
-                    '<option value="IDLE">Idle</option>' +
-                    '<option value="RETREAT">Retreat</option>' +
+                    '<option value="stay">Stay</option>' +
+                    '<option value="idle">Idle</option>' +
+                    '<option value="retreat">Retreat</option>' +
                 '</select>' +
                 ' ' +
                 '<p style="margin-bottom:0">Members:</p>' +
@@ -100,22 +94,18 @@ function getSetup() {
 }
 
 function getSelectMember(index) {
-    var unit = EXAMPLE_MEMBERS[index] && EXAMPLE_MEMBERS[index].unit;
-    var key = unit && unit.key || '';
-    var memberIndex = index + 1;
-
-    return  memberIndex + ': ' +
-            '<select name="member' + memberIndex + '" id="select-member-' + memberIndex + '" value="' + key + '">' +
+    return  index + ': ' +
+            '<select name="member' + index + '" id="select-member-' + index + '">' +
                 '<option value=""></option>' +
-                '<option ' + (key === 'infantry-1' ? 'selected' : '') + ' value="infantry-1">Infantry 1</option>' +
-                '<option ' + (key === 'infantry-2' ? 'selected' : '') + ' value="infantry-2">Infantry 2</option>' +
-                '<option ' + (key === 'infantry-3' ? 'selected' : '') + ' value="infantry-3">Infantry 3</option>' +
-                '<option ' + (key === 'armoured-infantry-1' ? 'selected' : '') + ' value="armoured-infantry-1">Armoured Infantry 1</option>' +
-                '<option ' + (key === 'armoured-infantry-2' ? 'selected' : '') + ' value="armoured-infantry-2">Armoured Infantry 2</option>' +
-                '<option ' + (key === 'armoured-infantry-3' ? 'selected' : '') + ' value="armoured-infantry-3">Armoured Infantry 3</option>' +
-                '<option ' + (key === 'mechanized-infantry-1' ? 'selected' : '') + ' value="mechanized-infantry-1">Mech Infantry 1</option>' +
-                '<option ' + (key === 'mechanized-infantry-2' ? 'selected' : '') + ' value="mechanized-infantry-2">Mech Infantry 2</option>' +
-                '<option ' + (key === 'mechanized-infantry-3' ? 'selected' : '') + ' value="mechanized-infantry-3">Mech Infantry 3</option>' +
+                '<option value="infantry-1">Infantry 1</option>' +
+                '<option value="infantry-2">Infantry 2</option>' +
+                '<option value="infantry-3">Infantry 3</option>' +
+                '<option value="armoured-infantry-1">Armoured Infantry 1</option>' +
+                '<option value="armoured-infantry-2">Armoured Infantry 2</option>' +
+                '<option value="armoured-infantry-3">Armoured Infantry 3</option>' +
+                '<option value="mechanized-infantry-1">Mech Infantry 1</option>' +
+                '<option value="mechanized-infantry-2">Mech Infantry 2</option>' +
+                '<option value="mechanized-infantry-3">Mech Infantry 3</option>' +
             '</select>';
 }
 
