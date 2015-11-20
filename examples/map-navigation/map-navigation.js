@@ -10,6 +10,10 @@ var poiSelect;
 var region;
 var navicon;
 var game;
+var _ = {
+    find: require('lodash/collection/find'),
+    forEach: require('lodash/collection/forEach')
+};
 
 function preload() {
     var assetLoader = new AssetLoader(game, '../assets/');
@@ -36,9 +40,10 @@ function update() {
     }
 }
 
-function createPoiOptions(pois) {
+function createPoiOptions() {
     var options = document.createDocumentFragment();
-    pois.forEach(function(poi) {
+
+    _.forEach(pois, function(poi) {
         var option = document.createElement('option');
         option.value = poi.name;
         option.innerHTML = poi.name;
@@ -49,13 +54,8 @@ function createPoiOptions(pois) {
 
 function handleNavigate() {
     var poiName = poiSelect.value;
-    var navigatePoi;
-
-    pois.some(function(poi) {
-        if (poi.name === poiName) {
-            navigatePoi = poi;
-            return true;
-        }
+    var navigatePoi = _.find(pois, function(poi) {
+        return poi.name === poiName;
     });
 
     navigate(navigatePoi.x, navigatePoi.y);
@@ -78,7 +78,7 @@ function navigate(x, y) {
 function init() {
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', { preload: preload, create: create, update: update }, false, false);
     poiSelect = document.querySelector('#select-poi');
-    createPoiOptions(pois);
+    createPoiOptions();
     document.querySelector('#navigate-button').addEventListener('click', handleNavigate);
 
     return game;

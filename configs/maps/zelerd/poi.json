@@ -1,80 +1,152 @@
-[
-    {
+{
+    "osroth": {
         "x": 312,
         "y": 374,
         "type": "city",
-        "name": "Osroth"
+        "name": "Osroth",
+        "key": "osroth"
     },
-    {
+    "zelerd-city": {
         "x": 352,
         "y": 310,
         "type": "city",
-        "name": "Zelerd City"
+        "name": "Zelerd City",
+        "key": "zelerd-city",
+        "stores": [
+            {
+                "name": "Sarelo Weapon Store",
+                "type": "weapon",
+                "offers": [
+                    { "key": "tima" },
+                    { "key": "punav" },
+                    { "key": "canan-1688" },
+                    { "key": "canan-2788" }
+                ]
+            },
+            {
+                "name": "Pujeilu Weapon Store",
+                "type": "weapon",
+                "offers": [
+                    { "key": "velace" },
+                    { "key": "acus-type-a" },
+                    { "key": "lurefit" }
+                ]
+            },
+            {
+                "name": "Ramikoa Protection Store",
+                "type": "protection",
+                "offers": [
+                    { "key": "cloth-armor" },
+                    { "key": "leather-armor" },
+                    { "key": "aluminium-armor" },
+                    { "key": "copper-armor" }
+                ]
+            },
+            {
+                "name": "Seiyotarns Protection Store",
+                "type": "protection",
+                "offers": [
+                    { "key": "resin-armor" },
+                    { "key": "iron-armor" },
+                    { "key": "steel-armor" },
+                    { "key": "heavy-iron-armor" }
+                ]
+            },
+            {
+                "name": "Notrenilly Agency",
+                "type": "agency",
+                "offers": [
+                    { "key": "infantry" },
+                    { "key": "infantry", "preset": "a" },
+                    { "key": "infantry", "preset": "b" }
+                ]
+            },
+            {
+                "name": "Elyrage Agency",
+                "type": "agency",
+                "offers": [
+                    { "key": "armoured-infantry" },
+                    { "key": "armoured-infantry", "preset": "a" },
+                    { "key": "armoured-infantry", "preset": "b" }
+                ]
+            }
+        ]
     },
-    {
+    "west-zelerd-city": {
         "x": 280,
         "y": 274,
         "type": "city",
-        "name": "West Zelerd City"
+        "name": "West Zelerd City",
+        "key": "west-zelerd-city"
     },
-    {
+    "niflontia": {
         "x": 177,
         "y": 305,
         "type": "stronghold",
-        "name": "Niflontia"
+        "name": "Niflontia",
+        "key": "niflontia"
     },
-    {
+    "farenrath": {
         "x": 176,
         "y": 210,
         "type": "city",
-        "name": "Farenrath"
+        "name": "Farenrath",
+        "key": "farenrath"
     },
-    {
+    "yamanraetia-island": {
         "x": 113,
         "y": 261,
         "type": "city",
-        "name": "Yamanraetia Island"
+        "name": "Yamanraetia Island",
+        "key": "yamanraetia-island"
     },
-    {
+    "old-zelerd-city": {
         "x": 296,
         "y": 162,
         "type": "city",
-        "name": "Old Zelerd City"
+        "name": "Old Zelerd City",
+        "key": "old-zelerd-city"
     },
-    {
+    "citadel-of-yuradean": {
         "x": 313,
         "y": 25,
         "type": "city",
-        "name": "Citadel of Yuradean"
+        "name": "Citadel of Yuradean",
+        "key": "citadel-of-yuradean"
     },
-    {
+    "kulemnos": {
         "x": 385,
         "y": 61,
         "type": "stronghold",
-        "name": "Kulemnos"
+        "name": "Kulemnos",
+        "key": "kulemnos"
     },
-    {
+    "drakegias": {
         "x": 456,
         "y": 134,
         "type": "stronghold",
-        "name": "Drakegias"
+        "name": "Drakegias",
+        "key": "drakegias"
     },
-    {
+    "kenhobasam": {
         "x": 537,
         "y": 137,
         "type": "stronghold",
-        "name": "Kenhobasam"
+        "name": "Kenhobasam",
+        "key": "kenhobasam"
     },
-    {
+    "koru": {
         "x": 497,
         "y": 201,
         "type": "stronghold",
-        "name": "Koru"
+        "name": "Koru",
+        "key": "koru"
     },
-    {
+    "abadan": {
         "x": 425,
         "y": 177,
         "type": "stronghold",
-        "name": "Abadan"
+        "name": "Abadan",
+        "key": "abadan"
     }
-]
+}
