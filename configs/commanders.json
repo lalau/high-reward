@@ -13,11 +13,15 @@
             "building": 0,
             "expert": 0
         },
+        "weapon": "lurefit",
+        "protection": "copper-armor",
         "max": {
             "hp": 342,
             "shoot": 125,
             "defence": 125
-        }
+        },
+        "weaponTypes": [ "pistol", "rifle", "mg" ],
+        "protectionTypes": [ "light-armor", "armor", "heavy-armor" ]
     },
     "jesse": {
         "key": "jesse",

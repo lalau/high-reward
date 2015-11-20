@@ -5,17 +5,17 @@ var Unit = require('../../../../lib/models/unit');
 
 describe('Unit', function () {
     it('should init with the key', function() {
-        var unit = new Unit({key: 'infantry-1'});
+        var unit = new Unit({key: 'infantry'});
 
-        expect(unit.key).to.equal('infantry-1');
-        expect(unit.type).to.equal('Infantry');
+        expect(unit.key).to.equal('infantry');
+        expect(unit.name).to.equal('Infantry');
         expect(unit.attrs).to.eql({
             hp: 16,
             shoot: 8,
             defence: 8,
             trading: 0,
             performance: 0,
-            building: 0,
+            building: 2,
             expert: 0,
             maxHp: 16,
             fatigue: 0
@@ -34,10 +34,10 @@ describe('Unit', function () {
             maxHp: 17,
             fatigue: 1
         };
-        var unit = new Unit({key: 'infantry-1', attrs: attrs});
+        var unit = new Unit({key: 'infantry', attrs: attrs});
 
-        expect(unit.key).to.equal('infantry-1');
-        expect(unit.type).to.equal('Infantry');
+        expect(unit.key).to.equal('infantry');
+        expect(unit.name).to.equal('Infantry');
         expect(unit.attrs).to.eql(attrs);
     });
 });

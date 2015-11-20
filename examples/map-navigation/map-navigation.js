@@ -64,14 +64,14 @@ function handleNavigate() {
 function navigate(x, y) {
     region.pathfinder.findPath(navicon.x, navicon.y, x, y, function(points) {
         if (!points) {
-            reurn;
+            return;
         }
 
         points.forEach(function(point){
             actionQueue.push(function() {
                 navicon.moveTo(point.x, point.y);
             });
-        })
+        });
     });
 }
 

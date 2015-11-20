@@ -1,0 +1,65 @@
+{
+    "tima": {
+        "name": "Tima",
+        "type": "pistol",
+        "typeName": "Pistol",
+        "key": "tima",
+        "price": 200,
+        "attack": 8,
+        "shoot": 9
+    },
+    "punav": {
+        "name": "Punav",
+        "type": "pistol",
+        "typeName": "Pistol",
+        "key": "punav",
+        "price": 450,
+        "attack": 12,
+        "shoot": 9
+    },
+    "canan-1688": {
+        "name": "Canan 1688",
+        "type": "rifle",
+        "typeName": "Rifle",
+        "key": "canan-1688",
+        "price": 250,
+        "attack": 10,
+        "shoot": 8
+    },
+    "canan-2788": {
+        "name": "Canan 2788",
+        "type": "rifle",
+        "typeName": "Rifle",
+        "key": "canan-2788",
+        "price": 500,
+        "attack": 15,
+        "shoot": 8
+    },
+    "velace": {
+        "name": "Velace",
+        "type": "pistol",
+        "typeName": "Pistol",
+        "key": "velace",
+        "price": 1000,
+        "attack": 18,
+        "shoot": 9
+    },
+    "acus-type-a": {
+        "name": "Acus Type-A",
+        "type": "rifle",
+        "typeName": "Rifle",
+        "key": "velace",
+        "price": 1000,
+        "attack": 20,
+        "shoot": 8
+    },
+    "lurefit": {
+        "name": "Lurefit",
+        "type": "mg",
+        "typeName": "Machine Gun",
+        "key": "lurefit",
+        "price": 1600,
+        "attack": 10,
+        "shoot": 20
+    }
+}

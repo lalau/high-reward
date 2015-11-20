@@ -8,29 +8,29 @@ var formations = require('../../configs/formations');
 var table = require('text-table');
 
 var EXAMPLE_MEMBERS_1 = [
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) }
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) }
 ];
 
 var EXAMPLE_MEMBERS_2 = [
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-1'}) },
-    { unit: new Unit({key: 'infantry-2'}) },
-    { unit: new Unit({key: 'armoured-infantry-1'}) },
-    { unit: new Unit({key: 'armoured-infantry-2'}) },
-    { unit: new Unit({key: 'armoured-infantry-2'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) },
-    { unit: new Unit({key: 'mechanized-infantry-1'}) }
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry'}) },
+    { unit: new Unit({key: 'infantry', preset: 'a'}) },
+    { unit: new Unit({key: 'armoured-infantry'}) },
+    { unit: new Unit({key: 'armoured-infantry', preset: 'a'}) },
+    { unit: new Unit({key: 'armoured-infantry', preset: 'a'}) },
+    { unit: new Unit({key: 'mechanized-infantry'}) },
+    { unit: new Unit({key: 'mechanized-infantry'}) },
+    { unit: new Unit({key: 'mechanized-infantry'}) },
+    { unit: new Unit({key: 'mechanized-infantry'}) }
 ];
 
 function init() {

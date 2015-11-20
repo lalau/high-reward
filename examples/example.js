@@ -14,6 +14,7 @@ var battleController = require('./battle-controller/battle-controller.js');
 var conversation = require('./conversation/conversation.js');
 var information = require('./information/information.js');
 var clock = require('./clock/clock.js');
+var store = require('./store/store.js');
 var contentUpdated = false;
 var game;
 
@@ -31,6 +32,7 @@ function initExample(lib) {
     }
 
     game = lib.init();
+    window.game = game;
 }
 
 function getExampleLib(hash) {
@@ -69,6 +71,9 @@ function getExampleLib(hash) {
         break;
     case '#information':
         exampleLib = information;
+        break;
+    case '#store':
+        exampleLib = store;
         break;
     default:
         exampleLib = troopInfo;

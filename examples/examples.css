@@ -56,6 +56,10 @@ body {
     vertical-align: bottom;
 }
 
+#setup pre {
+    white-space: pre-wrap;
+}
+
 #game {
     height: 500px;
     overflow: scroll;

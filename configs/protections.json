@@ -1,0 +1,66 @@
+{
+    "cloth-armor": {
+        "name": "Cloth Armor",
+        "type": "light-armor",
+        "typeName": "Light Armor",
+        "key": "cloth-armor",
+        "price": 180,
+        "protect": 8
+    },
+    "leather-armor": {
+        "name": "Leather Armor",
+        "type": "light-armor",
+        "typeName": "Light Armor",
+        "key": "leather-armor",
+        "price": 600,
+        "protect": 12
+    },
+    "aluminium-armor": {
+        "name": "Aluminium Armor",
+        "type": "armor",
+        "typeName": "Armor",
+        "key": "aluminium-armor",
+        "price": 240,
+        "protect": 10
+    },
+    "copper-armor": {
+        "name": "Copper Armor",
+        "type": "armor",
+        "typeName": "Armor",
+        "key": "copper-armor",
+        "price": 800,
+        "protect": 14
+    },
+    "resin-armor": {
+        "name": "Resin Armor",
+        "type": "light-armor",
+        "typeName": "Light Armor",
+        "key": "resin-armor",
+        "price": 1500,
+        "protect": 18
+    },
+    "iron-armor": {
+        "name": "Iron Armor",
+        "type": "armor",
+        "typeName": "Armor",
+        "key": "iron-armor",
+        "price": 1800,
+        "protect": 20
+    },
+    "steel-armor": {
+        "name": "Steel Armor",
+        "type": "armor",
+        "typeName": "Armor",
+        "key": "steel-armor",
+        "price": 5500,
+        "protect": 28
+    },
+    "heavy-iron-armor": {
+        "name": "Heavy Iron Armor",
+        "type": "heavy-armor",
+        "typeName": "Heavy Armor",
+        "key": "heavy-iron-armor",
+        "price": 16500,
+        "protect": 45
+    }
+}

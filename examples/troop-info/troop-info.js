@@ -4,7 +4,6 @@ var InitGame = require('../../lib/states/init-game');
 var TroopInfo = require('../../lib/states/troop-info');
 var gameStateUtil = require('../../lib/utils/game-state-util');
 var Unit = require('../../lib/models/unit');
-var Troop = require('../../lib/models/troop');
 var game;
 
 function init() {
@@ -25,7 +24,6 @@ function init() {
     selectCommander.addEventListener('change', function(e) {
         var troopInfoScreen = game.state.states[game.state.current]._screen;
         var commanderKey = e.target.value;
-        var commander;
 
         troopInfoScreen.setTroop(game.gameState.troops[commanderKey]);
         updateSetup(commanderKey);
@@ -39,11 +37,13 @@ function init() {
     selectMember.addEventListener('change', function(e) {
         var target = e.target;
         var index = target.id.replace('select-member-', '');
-        var unitKey = target.value;
+        var configs = target.value.split(',');
+        var unitKey = configs[0];
+        var preset = configs[1];
         var members = game.gameState.troops[selectCommander.value].members;
 
         if (unitKey) {
-            members[index] = new Unit({ key: unitKey });
+            members[index] = new Unit({ key: unitKey, preset: preset });
         } else {
             members[index] = null;
         }
@@ -74,7 +74,7 @@ function getSetup() {
 
     return  '<form>' +
                 '<label for="select-commander">Commander:</label>' +
-                '<select name="commander" id="select-commander" value="moro">' +
+                '<select name="commander" id="select-commander">' +
                     '<option value="moro">Moro</option>' +
                     '<option value="jesse">Jesse</option>' +
                     '<option value="lu">Lu</option>' +
@@ -82,7 +82,7 @@ function getSetup() {
                 '</select>' +
                 ' ' +
                 '<label for="select-order">Order:</label>' +
-                '<select name="order" id="select-order" value="STAY">' +
+                '<select name="order" id="select-order">' +
                     '<option value="stay">Stay</option>' +
                     '<option value="idle">Idle</option>' +
                     '<option value="retreat">Retreat</option>' +
@@ -97,15 +97,15 @@ function getSelectMember(index) {
     return  index + ': ' +
             '<select name="member' + index + '" id="select-member-' + index + '">' +
                 '<option value=""></option>' +
-                '<option value="infantry-1">Infantry 1</option>' +
-                '<option value="infantry-2">Infantry 2</option>' +
-                '<option value="infantry-3">Infantry 3</option>' +
-                '<option value="armoured-infantry-1">Armoured Infantry 1</option>' +
-                '<option value="armoured-infantry-2">Armoured Infantry 2</option>' +
-                '<option value="armoured-infantry-3">Armoured Infantry 3</option>' +
-                '<option value="mechanized-infantry-1">Mech Infantry 1</option>' +
-                '<option value="mechanized-infantry-2">Mech Infantry 2</option>' +
-                '<option value="mechanized-infantry-3">Mech Infantry 3</option>' +
+                '<option value="infantry">Infantry</option>' +
+                '<option value="infantry,a">Infantry a</option>' +
+                '<option value="infantry,b">Infantry b</option>' +
+                '<option value="armoured-infantry">Armoured Infantry</option>' +
+                '<option value="armoured-infantry,a">Armoured Infantry a</option>' +
+                '<option value="armoured-infantry,b">Armoured Infantry b</option>' +
+                '<option value="mechanized-infantry">Mech Infantry</option>' +
+                '<option value="mechanized-infantry,a">Mech Infantry a</option>' +
+                '<option value="mechanized-infantry,b">Mech Infantry b</option>' +
             '</select>';
 }
 

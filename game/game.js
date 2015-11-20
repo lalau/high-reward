@@ -13,6 +13,7 @@ var InitRegion = require('../lib/states/init-region');
 var MoveMenu = require('../lib/states/move-menu');
 var Battle = require('../lib/states/battle');
 var Information = require('../lib/states/information');
+var StationMenu = require('../lib/states/station-menu');
 var game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
 
 game.state.add(InitGame.NAME, InitGame);
@@ -28,6 +29,7 @@ game.state.add(InitRegion.NAME, InitRegion);
 game.state.add(MoveMenu.NAME, MoveMenu);
 game.state.add(Battle.NAME, Battle);
 game.state.add(Information.NAME, Information);
+game.state.add(StationMenu.NAME, StationMenu);
 
 game.state.start(InitGame.NAME, undefined, undefined, function() {
     game.state.start(MainMenu.NAME);
