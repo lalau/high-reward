@@ -16,6 +16,8 @@ var Information = require('../lib/states/information');
 var StationMenu = require('../lib/states/station-menu');
 var StoreMenu = require('../lib/states/store-menu');
 var Store = require('../lib/states/store');
+var BattleMenu = require('../lib/states/battle-menu');
+var SelectOptions = require('../lib/states/select-options');
 var game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
 
 game.state.add(InitGame.NAME, InitGame);
@@ -34,6 +36,8 @@ game.state.add(Information.NAME, Information);
 game.state.add(StationMenu.NAME, StationMenu);
 game.state.add(StoreMenu.NAME, StoreMenu);
 game.state.add(Store.NAME, Store);
+game.state.add(BattleMenu.NAME, BattleMenu);
+game.state.add(SelectOptions.NAME, SelectOptions);
 
 game.state.start(InitGame.NAME, undefined, undefined, function() {
     game.state.start(MainMenu.NAME);

@@ -1,0 +1,51 @@
+{
+    "healthy": [
+        {
+            "position": "center",
+            "speaker": "hospital",
+            "text": "Everyone is healthy. No need for treatment."
+        }
+    ],
+    "treatment": [
+        {
+            "position": "center",
+            "speaker": "hospital",
+            "text": "Do you need help? ..I see. It will cost ${amount}G for you. Do you want the treatment?"
+        },
+        {
+            "type": "select",
+            "key": "treat",
+            "options": [
+                {
+                    "text": "Treat",
+                    "next": "treatment-confirm",
+                    "value": true
+                },
+                {
+                    "text": "Cancel",
+                    "next": "treatment-decline",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "treatment-confirm": [
+        {
+            "position": "center",
+            "speaker": "hospital",
+            "text": "Ok. Please wait.."
+        },
+        {
+            "position": "center",
+            "speaker": "hospital",
+            "text": "Treatment finished. Everyone is recovered now."
+        }
+    ],
+    "treatment-decline": [
+        {
+            "position": "center",
+            "speaker": "hospital",
+            "text": "Oh ok. Please take care.."
+        }
+    ]
+}

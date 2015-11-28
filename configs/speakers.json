@@ -1,0 +1,6 @@
+{
+    "hospital": {
+        "fullName": "${name} Hospital",
+        "portrait": "hospital"
+    }
+}

@@ -7,5 +7,8 @@
     ],
     "battle-win-hard": [
         "We barely won...\nAcquired ${amount}G!"
+    ],
+    "battle-retreat": [
+        "Too bad we failed...\nRetreating to ${name}."
     ]
 }

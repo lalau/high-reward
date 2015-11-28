@@ -2,6 +2,9 @@
 
 var InitGame = require('../../lib/states/init-game');
 var Battle = require('../../lib/states/battle');
+var BattleMenu = require('../../lib/states/battle-menu');
+var Information = require('../../lib/states/information');
+var SelectOptions = require('../../lib/states/select-options');
 var gameStateUtil = require('../../lib/utils/game-state-util');
 var battleUtil = require('../../lib/utils/battle-util');
 var game;
@@ -11,6 +14,9 @@ function init() {
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
     game.state.add(InitGame.NAME, InitGame);
     game.state.add(Battle.NAME, Battle);
+    game.state.add(BattleMenu.NAME, BattleMenu);
+    game.state.add(Information.NAME, Information);
+    game.state.add(SelectOptions.NAME, SelectOptions);
 
     game.state.start(InitGame.NAME, undefined, undefined, function() {
         game.gameState = gameStateUtil.getNewState(game);
