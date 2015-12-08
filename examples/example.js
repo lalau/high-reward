@@ -15,6 +15,7 @@ var conversation = require('./conversation/conversation.js');
 var information = require('./information/information.js');
 var clock = require('./clock/clock.js');
 var store = require('./store/store.js');
+var bulletin = require('./bulletin/bulletin.js');
 var contentUpdated = false;
 var game;
 
@@ -74,6 +75,9 @@ function getExampleLib(hash) {
         break;
     case '#store':
         exampleLib = store;
+        break;
+    case '#bulletin':
+        exampleLib = bulletin;
         break;
     default:
         exampleLib = troopInfo;

@@ -1,7 +1,7 @@
 {
     "moro": {
         "key": "moro",
-        "fullName": "Moro Dinando",
+        "name": "Moro Dinando",
         "shortName": "Moro",
         "troopName": "Dinando 1st Squad",
         "attributes": {
@@ -25,7 +25,7 @@
     },
     "jesse": {
         "key": "jesse",
-        "fullName": "Jesse Azeiro",
+        "name": "Jesse Azeiro",
         "shortName": "Jesse",
         "troopName": "Dinando 2nd Squad",
         "attributes": {
@@ -45,7 +45,7 @@
     },
     "lu": {
         "key": "lu",
-        "fullName": "Lu Dominic",
+        "name": "Lu Dominic",
         "shortName": "Lu",
         "troopName": "Dominic and Company",
         "attributes": {
@@ -65,7 +65,7 @@
     },
     "sal": {
         "key": "sal",
-        "fullName": "Sal Venia Borosman",
+        "name": "Sal Venia Borosman",
         "shortName": "Sal",
         "troopName": "Borosman Fusiliers",
         "attributes": {
@@ -86,7 +86,7 @@
     },
     "tilum": {
         "key": "tilum",
-        "fullName": "Tilum Rem",
+        "name": "Tilum Rem",
         "shortName": "Sal",
         "troopName": "Rem's Mercant Corps",
         "attributes": {
@@ -107,7 +107,7 @@
     },
     "daisy": {
         "key": "daisy",
-        "fullName": "Daisy Laide",
+        "name": "Daisy Laide",
         "shortName": "Daisy",
         "troopName": "Daisy's Dance Company",
         "attributes": {

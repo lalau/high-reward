@@ -3,6 +3,7 @@
 var InitGame = require('../../lib/states/init-game');
 var Conversation = require('../../lib/states/conversation');
 var SelectOptions = require('../../lib/states/select-options');
+var npc = require('../../configs/npc');
 var game;
 
 function init() {
@@ -27,6 +28,9 @@ function init() {
         game.state.start(Conversation.NAME, undefined, undefined, {
             scriptGroup: scriptGroup,
             scriptKey: scriptKey,
+            speakerMap: {
+                hospital: npc.hospital
+            },
             done: function() {
                 game.state.start(InitGame.NAME);
                 selectScript.value = '';

@@ -1,0 +1,105 @@
+{
+    "clients": [
+        {
+            "key": "nurse"
+        },
+        {
+            "key": "diviner"
+        },
+        {
+            "key": "tavern-host"
+        },
+        {
+            "key": "tavern-lady"
+        },
+        {
+            "key": "weapon-store"
+        },
+        {
+            "key": "weapon-store-assistant"
+        },
+        {
+            "key": "weapon-dealer"
+        },
+        {
+            "key": "operator"
+        },
+        {
+            "key": "economist"
+        },
+        {
+            "key": "accessory-store-assistant"
+        },
+        {
+            "key": "newsstand"
+        },
+        {
+            "key": "metalsmith"
+        },
+        {
+            "key": "dancer"
+        },
+        {
+            "key": "mystery-woman"
+        },
+        {
+            "key": "strange-girl"
+        },
+        {
+            "key": "agency"
+        },
+        {
+            "key": "pastor"
+        },
+        {
+            "key": "bishop"
+        },
+        {
+            "key": "priest"
+        },
+        {
+            "key": "peddler"
+        },
+        {
+            "key": "bench-jeweler"
+        },
+        {
+            "key": "jewelry-dealer"
+        },
+        {
+            "key": "jewelry-trader"
+        },
+        {
+            "key": "scientist"
+        },
+        {
+            "key": "minister"
+        },
+        {
+            "key": "defense-store"
+        }
+    ],
+    "delivery": [
+        {
+            "item": "book"
+        },
+        {
+            "item": "writing"
+        },
+        {
+            "item": "flagon"
+        },
+        {
+            "item": "machine"
+        },
+        {
+            "item": "letter"
+        },
+        {
+            "item": "gun"
+        },
+        {
+            "item": "spear"
+        }
+    ]
+}

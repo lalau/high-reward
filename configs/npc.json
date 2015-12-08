@@ -1,0 +1,148 @@
+{
+    "hospital": {
+        "name": "${name} Hospital",
+        "portrait": "girl-2"
+    },
+    "poi-agency-store": {
+        "name": "Agency",
+        "portrait": "man-1"
+    },
+    "poi-protection-store": {
+        "name": "Protection",
+        "portrait": "man-4"
+    },
+    "poi-weapon-store": {
+        "name": "Weapon",
+        "portrait": "girl-4"
+    },
+    "nurse": {
+        "name": "Nurse",
+        "portrait": ["girl-1", "girl-2"],
+        "workScript": ["work-4", "work-1"]
+    },
+    "diviner": {
+        "name": "Diviner",
+        "portrait": "woman-1",
+        "workScript": "work-1"
+    },
+    "tavern-host": {
+        "name": "Tavern Host",
+        "portrait": "man-9",
+        "workScript": "work-6"
+    },
+    "tavern-lady": {
+        "name": "Tavern Lady",
+        "portrait": ["woman-2", "woman-3", "woman-4"],
+        "workScript": ["work-1", "work-4"]
+    },
+    "weapon-store": {
+        "name": "Weapon Store",
+        "portrait": "man-4",
+        "workScript": "work-2"
+    },
+    "weapon-store-assistant": {
+        "name": "Weapon Store",
+        "portrait": ["woman-4", "woman-6", "woman-7"],
+        "workScript": ["work-1", "work-4"]
+    },
+    "weapon-dealer": {
+        "name": "Weapon Dealer",
+        "portrait": ["man-3", "man-5", "man-10"],
+        "workScript": ["work-3", "work-6"]
+    },
+    "operator": {
+        "name": "Operator",
+        "portrait": ["man-4", "man-5"],
+        "workScript": ["work-3", "work-6"]
+    },
+    "economist": {
+        "name": "Economist",
+        "portrait": "man-11",
+        "workScript": "work-3"
+    },
+    "accessory-store-assistant": {
+        "name": "Supply Store",
+        "portrait": ["girl-1", "girl-5"],
+        "workScript": ["work-1", "work-4"]
+    },
+    "newsstand": {
+        "name": "Newsstand",
+        "portrait": "man-11",
+        "workScript": "work-3"
+    },
+    "metalsmith": {
+        "name": "Metalsmith",
+        "portrait": "man-4",
+        "workScript": ["work-2", "work-6"]
+    },
+    "dancer": {
+        "name": "Dancer",
+        "portrait": "man-6",
+        "workScript": "work-5"
+    },
+    "mystery-woman": {
+        "name": "Mystery Woman",
+        "portrait": "woman-3",
+        "workScript": "work-5"
+    },
+    "strange-girl": {
+        "name": "Strange Girl",
+        "portrait": "girl-3",
+        "workScript": "work-5"
+    },
+    "agency": {
+        "name": "Agency",
+        "portrait": "man-6",
+        "workScript": "work-6"
+    },
+    "pastor": {
+        "name": "Pastor",
+        "portrait": "man-2",
+        "workScript": "work-2"
+    },
+    "bishop": {
+        "name": "Bishop",
+        "portrait": "man-2",
+        "workScript": "work-2"
+    },
+    "priest": {
+        "name": "Bishop",
+        "portrait": "man-2",
+        "workScript": ["work-2", "work-3"]
+    },
+    "peddler": {
+        "name": "Peddler",
+        "portrait": ["man-3", "man-7"],
+        "workScript": ["work-3", "work-6"]
+    },
+    "bench-jeweler": {
+        "name": "Bench Jeweler",
+        "portrait": "man-4",
+        "workScript": "work-2"
+    },
+    "jewelry-dealer": {
+        "name": "Jewelry Dealer",
+        "portrait": "woman-5",
+        "workScript": "work-5"
+    },
+    "jewelry-trader": {
+        "name": "Jewelry Trader",
+        "portrait": "man-3",
+        "workScript": "work-6"
+    },
+    "scientist": {
+        "name": "Scientist",
+        "portrait": "man-4",
+        "workScript": "work-3"
+    },
+    "minister": {
+        "name": "Minister",
+        "portrait": "man-8",
+        "workScript": "work-6"
+    },
+    "defense-store": {
+        "name": "Defense Store",
+        "portrait": "man-4",
+        "workScript": "work-2"
+    }
+}

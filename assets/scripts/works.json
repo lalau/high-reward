@@ -1,0 +1,394 @@
+{
+    "work-1": [
+        {
+            "text": "I.. I am so dead! Can someone help this pitiful me.."
+        },
+        {
+            "text": "..I promised to send these ${item}s to this person ..but I can't travel to ${name} right now."
+        },
+        {
+            "text": "I will pay ${amount} as reward.. but it must be delivered within ${days}."
+        },
+        {
+            "text": "Will you accept this job?"
+        },
+        {
+            "type": "select",
+            "key": "accept",
+            "options": [
+                {
+                    "text": "Accept",
+                    "next": "work-1-accept",
+                    "value": true
+                },
+                {
+                    "text": "Decline",
+                    "next": "work-1-decline",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "work-1-accept": [
+        {
+            "text": "That's great! I am counting on you now."
+        }
+    ],
+    "work-1-decline": [
+        {
+            "text": "Oh no.. What am I gonna do.."
+        }
+    ],
+    "work-1-completed": [
+        {
+            "text": "I really appreciate your help! It's all for me.. Thanks.."
+        },
+        {
+            "text": "..I will not forget your kindness.. This is the promised reward."
+        },
+        {
+            "text": "${reward}G, please take it."
+        }
+    ],
+    "work-1-failed": [
+        {
+            "text": "Oh no! We are out of time"
+        },
+        {
+            "text": "Thank you for your help. But, it's too late."
+        },
+        {
+            "text": "Bye.."
+        }
+    ],
+
+
+    "work-2": [
+        {
+            "text": "Hey young people! It's good to see you. I am having a difficulty. Can you help me on this?"
+        },
+        {
+            "text": "I need your help on a task. Within ${days}, deliver these ${item}s to ${name}."
+        },
+        {
+            "text": "In this troubled times, I really can't do this on my own. Please, help me.. Reward is ${amount}."
+        },
+        {
+            "text": "What do you think? Will you help me?"
+        },
+        {
+            "type": "select",
+            "key": "accept",
+            "options": [
+                {
+                    "text": "Accept",
+                    "next": "work-2-accept",
+                    "value": true
+                },
+                {
+                    "text": "Decline",
+                    "next": "work-2-decline",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "work-2-accept": [
+        {
+            "text": "Oh really? You will help me?"
+        },
+        {
+            "text": "Thank you very much, young people. I will not forget the favor you are doing me!"
+        }
+    ],
+    "work-2-decline": [
+        {
+            "text": "Oh you can't help.. I guess you have your reasons.."
+        }
+    ],
+    "work-2-completed": [
+        {
+            "text": "It has finally arrived! Thank you so much! You have saved my day!"
+        }
+    ],
+    "work-2-failed": [
+        {
+            "text": "Too bad. I really can't wait any longer."
+        },
+        {
+            "text": "Thanks for your help.."
+        }
+    ],
+
+
+    "work-3": [
+        {
+            "text": "Soldier. Hey Soldier! I have a job for you.."
+        },
+        {
+            "text": "Within ${days}, can you deliver these ${item}s to ${name}?"
+        },
+        {
+            "text": "There will be reward. I am going to pay you ${amount}. Will you aceept?"
+        },
+        {
+            "type": "select",
+            "key": "accept",
+            "options": [
+                {
+                    "text": "Accept",
+                    "next": "work-3-accept",
+                    "value": true
+                },
+                {
+                    "text": "Decline",
+                    "next": "work-3-decline",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "work-3-accept": [
+        {
+            "text": "Great. You accepted it. Everything is on you now."
+        }
+    ],
+    "work-3-decline": [
+        {
+            "text": "Oh ok. Too bad you can't accept it.."
+        }
+    ],
+    "work-3-completed": [
+        {
+            "text": "Haha, it is delivered finally. Ok, this is your reward."
+        },
+        {
+            "text": "It's not a big deal, take it."
+        }
+    ],
+    "work-3-failed": [
+        {
+            "text": "This is awful.. Since it's not delivered as promised, I can't pay you the reward."
+        },
+        {
+            "text": "These are all based on the contract. Let's see if we have another opportunity next time."
+        }
+    ],
+
+
+    "work-4": [
+        {
+            "text": "Anyone looking for work?"
+        },
+        {
+            "text": "Finally someone has come. Anyway, please deliver these ${item}s to ${name}."
+        },
+        {
+            "text": "It is in a hurry.. but I can't do it right now.."
+        },
+        {
+            "text": "It must be delivered within ${days}.. I will pay you ${amount} as reward."
+        },
+        {
+            "type": "select",
+            "key": "accept",
+            "options": [
+                {
+                    "text": "Accept",
+                    "next": "work-4-accept",
+                    "value": true
+                },
+                {
+                    "text": "Decline",
+                    "next": "work-4-decline",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "work-4-accept": [
+        {
+            "text": "Thank you. Finally someone can help me on this."
+        }
+    ],
+    "work-4-decline": [
+        {
+            "text": "It.. it is too bad.."
+        }
+    ],
+    "work-4-completed": [
+        {
+            "text": "It has arrived at last! I really appreciate your help."
+        },
+        {
+            "text": "Hey. This is the reward you deserved. Please take it."
+        }
+    ],
+    "work-4-failed": [
+        {
+            "text": "I am disappointed.. Time is over.. There is no point to continue the delivery."
+        }
+    ],
+
+
+    "work-5": [
+        {
+            "text": "Ha~ha, you came at the right time. There is a job for you. Of course, you also came because of me right?"
+        },
+        {
+            "type": "select",
+            "key": "approach",
+            "options": [
+                {
+                    "text": "Approach",
+                    "next": "work-5-approach",
+                    "value": true
+                },
+                {
+                    "text": "Avoid",
+                    "next": "work-5-avoid",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "work-5-approach": [
+        {
+            "text": "Ha~ha, for a cute lady like me, of course."
+        },
+        {
+            "next": "work-5-part2"
+        }
+    ],
+    "work-5-avoid": [
+        {
+            "text": "What? Are you pretending you didn't hear me? I can't believe in this world someone would decline me."
+        },
+        {
+            "next": "work-5-part2"
+        }
+    ],
+    "work-5-part2": [
+        {
+            "text": "Haha! OK, I am going to tell you."
+        },
+        {
+            "text": "Deliver these ${item}s to ${name}."
+        },
+        {
+            "text": "Of course it has to be finished within ${days}."
+        },
+        {
+            "text": "I am going to pay you ${amount}. How's that? Accept?"
+        },
+        {
+            "type": "select",
+            "key": "accept",
+            "options": [
+                {
+                    "text": "Accept",
+                    "next": "work-5-accept",
+                    "value": true
+                },
+                {
+                    "text": "Decline",
+                    "next": "work-5-decline",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "work-5-accept": [
+        {
+            "text": "Haha! Thanks. Hey! Let's go now."
+        }
+    ],
+    "work-5-decline": [
+        {
+            "text": "What? Declined? Unbelievable!"
+        },
+        {
+            "text": "You are pissing me off! Be gone!"
+        }
+    ],
+    "work-5-completed": [
+        {
+            "text": "I have waiting for so long. But anyway, you keep your promise.."
+        },
+        {
+            "text": "According to the contract, here is your reward ${reward}G."
+        }
+    ],
+    "work-5-failed": [
+        {
+            "text": "Oh~!"
+        },
+        {
+            "text": "It's still not delivered?"
+        },
+        {
+            "text": "Ok. Our contract is terminated. You need to compensate me with the penalty fee, and then, get out of my way!"
+        }
+    ],
+
+
+    "work-6": [
+        {
+            "text": "I heard good things about your team."
+        },
+        {
+            "text": "How about this offer? Deliver these ${item}s to ${name} and I will reward you ${amount}."
+        },
+        {
+            "text": "Deadline is ${days}. If you finish on time, I am going to double the reward."
+        },
+        {
+            "text": "It's a pretty sweet deal. Do you want to try?"
+        },
+        {
+            "type": "select",
+            "key": "accept",
+            "options": [
+                {
+                    "text": "Accept",
+                    "next": "work-6-accept",
+                    "value": true
+                },
+                {
+                    "text": "Decline",
+                    "next": "work-6-decline",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "work-6-accept": [
+        {
+            "text": "Great! Let's go then. I will pay the reward once it's delievered."
+        }
+    ],
+    "work-6-decline": [
+        {
+            "text": "Ok! I have nothing more to say then."
+        }
+    ],
+    "work-6-completed": [
+        {
+            "text": "Awesome, it's finally arrived."
+        },
+        {
+            "text": "Here's the reward ${reward}G. Take it."
+        }
+    ],
+    "work-6-failed": [
+        {
+            "text": "It's slow! It's too slow! Unforgivable! You are going to pay me penalty fee!"
+        },
+        {
+            "text": "Useless people like you need to learn a lesson. Hey, pay me ${penalty}G as compensation."
+        },
+        {
+            "text": "Our contract is terminated. Be gone!"
+        }
+    ]
+}

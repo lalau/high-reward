@@ -9,7 +9,7 @@ describe('Commander', function () {
 
         expect(commander.key).to.equal('moro');
         expect(commander.type).to.equal('commander');
-        expect(commander.fullName).to.equal('Moro Dinando');
+        expect(commander.name).to.equal('Moro Dinando');
         expect(commander.shortName).to.equal('Moro');
         expect(commander.troopName).to.equal('Dinando 1st Squad');
         expect(commander.attrs).to.eql({
@@ -42,7 +42,7 @@ describe('Commander', function () {
 
         expect(commander.key).to.equal('moro');
         expect(commander.type).to.equal('commander');
-        expect(commander.fullName).to.equal('Moro Dinando');
+        expect(commander.name).to.equal('Moro Dinando');
         expect(commander.shortName).to.equal('Moro');
         expect(commander.troopName).to.equal('Dinando 1st Squad');
         expect(commander.attrs).to.eql(attrs);
