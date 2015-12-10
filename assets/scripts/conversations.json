@@ -94,5 +94,12 @@
             "speaker": "moro",
             "text": "Right! We will pay off all the debt! Let's work hard and aim for zero debt!"
         }
+    ],
+
+    "work-in-progress": [
+        {
+            "position": "center",
+            "text": "I have already accepted another work.. I should go to ${name} now.."
+        }
     ]
 }
