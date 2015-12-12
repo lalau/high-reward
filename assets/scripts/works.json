@@ -7,7 +7,7 @@
             "text": "..I promised to send these ${item}s to this person ..but I can't travel to ${name} right now."
         },
         {
-            "text": "I will pay ${amount} as reward.. but it must be delivered within ${days}."
+            "text": "I will pay ${amount}G as reward.. but it must be delivered within ${days}."
         },
         {
             "text": "Will you accept this job?"
@@ -52,7 +52,7 @@
     ],
     "work-1-failed": [
         {
-            "text": "Oh no! We are out of time"
+            "text": "Oh no! We are out of time."
         },
         {
             "text": "Thank you for your help. But, it's too late."
@@ -71,7 +71,7 @@
             "text": "I need your help on a task. Within ${days}, deliver these ${item}s to ${name}."
         },
         {
-            "text": "In this troubled times, I really can't do this on my own. Please, help me.. Reward is ${amount}."
+            "text": "In this troubled times, I really can't do this on my own. Please, help me.. Reward is ${amount}G."
         },
         {
             "text": "What do you think? Will you help me?"
@@ -129,7 +129,7 @@
             "text": "Within ${days}, can you deliver these ${item}s to ${name}?"
         },
         {
-            "text": "There will be reward. I am going to pay you ${amount}. Will you aceept?"
+            "text": "There will be reward. I am going to pay you ${amount}G. Will you aceept?"
         },
         {
             "type": "select",
@@ -187,7 +187,7 @@
             "text": "It is in a hurry.. but I can't do it right now.."
         },
         {
-            "text": "It must be delivered within ${days}.. I will pay you ${amount} as reward."
+            "text": "It must be delivered within ${days}.. I will pay you ${amount}G as reward."
         },
         {
             "type": "select",
@@ -279,7 +279,7 @@
             "text": "Of course it has to be finished within ${days}."
         },
         {
-            "text": "I am going to pay you ${amount}. How's that? Accept?"
+            "text": "I am going to pay you ${amount}G. How's that? Accept?"
         },
         {
             "type": "select",
@@ -327,7 +327,10 @@
             "text": "It's still not delivered?"
         },
         {
-            "text": "Ok. Our contract is terminated. You need to compensate me with the penalty fee, and then, get out of my way!"
+            "text": "Ok. Our contract is terminated."
+        },
+        {
+            "text": "You need to compensate me with the penalty fee, and then, get out of my way!"
         }
     ],
 
@@ -337,7 +340,7 @@
             "text": "I heard good things about your team."
         },
         {
-            "text": "How about this offer? Deliver these ${item}s to ${name} and I will reward you ${amount}."
+            "text": "How about this offer? Deliver these ${item}s to ${name} and I will reward you ${amount}G."
         },
         {
             "text": "Deadline is ${days}. If you finish on time, I am going to double the reward."
