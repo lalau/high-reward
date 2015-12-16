@@ -4,6 +4,7 @@ var InitGame = require('../../lib/states/init-game');
 var Conversation = require('../../lib/states/conversation');
 var SelectOptions = require('../../lib/states/select-options');
 var npc = require('../../configs/npc');
+var gameStateUtil = require('../../lib/utils/game-state-util');
 var game;
 
 function init() {
@@ -19,10 +20,15 @@ function init() {
         var values = selectScript.value.split(',');
         var scriptGroup = values[0];
         var scriptKey = values[1];
+        var amount;
 
         if (!scriptKey) {
             game.state.start(InitGame.NAME);
             return;
+        }
+
+        if (!game.gameState) {
+            game.gameState = gameStateUtil.getNewState(game);
         }
 
         game.state.start(Conversation.NAME, undefined, undefined, {
@@ -37,11 +43,32 @@ function init() {
             },
             data: {
                 name: 'Zelerd City',
-                amount: 350
+                amount: function() {
+                    return amount || 350;
+                },
+                remaining: function() {
+                    return game.gameState.debt - amount;
+                }
             },
             onSelect: {
-                treat: function(/*value*/) {
-                    // console.log(value);
+                amount: function(selectAmount) {
+                    amount = selectAmount;
+                }
+            },
+            onOptions: {
+                amount: function(options) {
+                    var canAfford = game.gameState.bank >= 5000;
+
+                    return options.filter(function(option) {
+                        if (option.key) {
+                            if (option.key === 'pay-5000' && !canAfford) {
+                                return false;
+                            } else if (option.key === 'pay-unable' && canAfford) {
+                                return false;
+                            }
+                        }
+                        return true;
+                    });
                 }
             }
         });
@@ -59,6 +86,8 @@ function getSetup() {
                     '<option value="conversation,introduction">Conversation - Introduction</option>' +
                     '<option value="hospital,healthy">Hospital - Healthy</option>' +
                     '<option value="hospital,treatment">Hospital - Treatment</option>' +
+                    '<option value="conversation,collector-introduction">Collector - Introduction</option>' +
+                    '<option value="conversation,collector-pay">Collector - Pay</option>' +
                 '</select>' +
             '</div>';
 }

@@ -101,5 +101,269 @@
             "position": "center",
             "text": "I have already accepted another work.. I should go to ${name} now.."
         }
-    ]
+    ],
+
+    "collector-introduction": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "type": "information",
+                "text": "A young lady is approaching Moro.."
+            },
+            {
+                "text": "Are you Mr Moro Dinando?"
+            },
+            {
+                "text": "Hi, nice to meet you. I am the special commissioner from The World Bank."
+            },
+            {
+                "text": "From now on, I will be responsible for collecting the installment payment of the debt you owed every week."
+            },
+            {
+                "text": "The minimum payment of every week is 5000G. If you can't afford it, we will roll the penalty into the debt."
+            },
+            {
+                "text": "Okay! It will start next week. Please don't forget to prepare the 5000G."
+            },
+            {
+                "text": "Alright! See you next week then."
+            }
+        ]
+    },
+
+    "collector-collect": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "type": "information",
+                "text": "Special commissioner Regin is coming to Moro again.."
+            },
+            {
+                "text": "It's the time for the week~ You must have prepared for the installment payment of the debt."
+            },
+            {
+                "next": "collector-ask-pay"
+            }
+        ]
+    },
+
+    "collector-ask-pay": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "How's that? Do you have the money?"
+            },
+            {
+                "type": "select",
+                "key": "pay",
+                "options": [
+                    {
+                        "text": "Pay",
+                        "next": "collector-pay",
+                        "value": true
+                    },
+                    {
+                        "text": "Do Not Pay",
+                        "next": "collector-refuse",
+                        "value": false
+                    }
+                ]
+            }
+        ]
+    },
+
+    "collector-refuse": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "Wh~What! Are you trying to joke with me? If you don't pay.. These people with me will not just let you go."
+            },
+            {
+                "type": "select",
+                "key": "fight",
+                "options": [
+                    {
+                        "text": "Sorry",
+                        "next": "collector-ask-pay",
+                        "value": false
+                    },
+                    {
+                        "text": "Fight",
+                        "next": "collector-fight",
+                        "value": true,
+                        "enabled": false
+                    }
+                ]
+            }
+        ]
+    },
+
+    "collector-pay": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "If you don't repay something every week, your debt will never be paid off."
+            },
+            {
+                "text": "..So, How much do you want to pay this week?"
+            },
+            {
+                "type": "select",
+                "key": "amount",
+                "options": [
+                    {
+                        "key": "pay-5000",
+                        "text": "5000G",
+                        "next": "collector-paid",
+                        "value": 5000
+                    },
+                    {
+                        "key": "pay-unable",
+                        "text": "Unable To Pay",
+                        "next": "collector-unable-to-pay",
+                        "value": -100000
+                    },
+                    {
+                        "text": "Ah..",
+                        "next": "collector-rethink"
+                    }
+                ]
+            }
+        ]
+    },
+
+    "collector-paid": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "Alright! ${amount}G. Thanks."
+            },
+            {
+                "next": "collector-next-week"
+            }
+        ]
+    },
+
+    "collector-next-week": [
+        {
+            "position": "center",
+            "speaker": "regin",
+            "text": "You still owe ${remaining}G. Let's prepare for the next week!"
+        }
+    ],
+
+    "collector-rethink": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "Oh? You want to think about it? Mm.."
+            },
+            {
+                "next": "collector-ask-pay"
+            }
+        ]
+    },
+
+    "collector-fight": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "Haha~ You want to try?"
+            },
+            {
+                "text": "I will show you what I am capable of!"
+            }
+        ]
+    },
+
+    "collector-fight-failed": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "Just give me the money!"
+            },
+            {
+                "type": "select",
+                "key": "amount",
+                "options": [
+                    {
+                        "key": "pay-5000",
+                        "text": "5000G",
+                        "next": "collector-paid",
+                        "value": 5000
+                    },
+                    {
+                        "key": "pay-unable",
+                        "text": "Unable To Pay",
+                        "next": "collector-unable-to-pay",
+                        "value": -100000
+                    },
+                    {
+                        "text": "Ah..",
+                        "next": "collector-rethink"
+                    }
+                ]
+            }
+        ]
+    },
+
+    "collector-fight-disabled": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "Hey! You are already injured. You can't fight anymore. Just give up!"
+            },
+            {
+                "next": "collector-ask-pay"
+            }
+        ]
+    },
+
+    "collector-unable-to-pay": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin"
+        },
+        "texts": [
+            {
+                "text": "What? Didn't we agree to pay a minimum of 5000G every week?"
+            },
+            {
+                "text": "Then we have to add 100000G penalty fee to your debt."
+            },
+            {
+                "next": "collector-next-week"
+            }
+        ]
+    }
 }
