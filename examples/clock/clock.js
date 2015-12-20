@@ -11,6 +11,9 @@ var game;
 var lastUpdatedTime;
 var worldTime;
 var dateText;
+var _ = {
+    padLeft: require('lodash/string/padLeft')
+};
 
 function preload() {
     var assetLoader = new AssetLoader(game, '../assets/');
@@ -20,7 +23,7 @@ function preload() {
 function create() {
     var region = new Region(game, 'zelerd', grid, pois);
 
-    pointer = new Phaser.Sprite(game, 17, 285, 'clock', 0);
+    pointer = new Phaser.Sprite(game, 17, 285, 'sprites', 'clock-00.png');
 
     region.addChild(pointer);
     game.stage.addChild(region);
@@ -38,10 +41,10 @@ function update() {
     worldTime.add(1, 'h');
 
     var worldHour = worldTime.hour();
-    var frame = worldHour <= 12 ? worldHour : 24 - worldHour;
+    var frameIndex = worldHour <= 12 ? worldHour : 24 - worldHour;
     var worldDate = worldTime.format('YYYY/MM/DD');
 
-    pointer.frame = frame;
+    pointer.frameName = 'clock-' + _.padLeft(frameIndex, 2, 0) + '.png';
     if (dateText.text !== worldDate) {
         dateText.setText(worldDate);
     }

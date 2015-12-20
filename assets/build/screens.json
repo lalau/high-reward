@@ -1,0 +1,33 @@
+{
+	"meta": {
+		"image": "screens.png",
+		"size": {"w":1280,"h":567},
+		"scale": "1"
+	},
+	"frames": {
+		"background.png":
+		{
+			"frame": {"x":0,"y":0,"w":640,"h":400},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":640,"h":400},
+			"sourceSize": {"w":640,"h":400}
+		},
+		"zelerd.png":
+		{
+			"frame": {"x":640,"y":0,"w":640,"h":400},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":640,"h":400},
+			"sourceSize": {"w":640,"h":400}
+		},
+		"battlefield.png":
+		{
+			"frame": {"x":0,"y":400,"w":575,"h":167},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":575,"h":167},
+			"sourceSize": {"w":575,"h":167}
+		}
+	}
+}

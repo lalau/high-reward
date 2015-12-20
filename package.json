@@ -4,7 +4,11 @@
   "description": "High Reward Game Remake",
   "main": "index.js",
   "scripts": {
-    "start-example": "./node_modules/wzrd/bin.js examples/example.js",
+    "build-icons": "./node_modules/spritesheet-js/index.js assets/raw/icons/**/*.png --path assets/build --name icons",
+    "build-portraits": "./node_modules/spritesheet-js/index.js assets/raw/portraits/**/*.png --path assets/build --name portraits",
+    "build-screens": "./node_modules/spritesheet-js/index.js assets/raw/screens/**/*.png --path assets/build --name screens",
+    "build-sprites": "./node_modules/spritesheet-js/index.js assets/raw/sprites/**/*.png --path assets/build --name sprites",
+    "example": "./node_modules/wzrd/bin.js examples/example.js",
     "start": "./node_modules/wzrd/bin.js game/game.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
@@ -25,10 +29,11 @@
   },
   "devDependencies": {
     "browserify": "^11.0.1",
-    "chai": "~2.2.0",
+    "chai": "^2.2.0",
     "eslint": "^1.5.0",
+    "mocha": "^2.3.3",
+    "spritesheet-js": "^1.1.4",
     "text-table": "0.2.0",
-    "wzrd": "^1.3.1",
-    "mocha": "^2.3.3"
+    "wzrd": "^1.3.1"
   }
 }

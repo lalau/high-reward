@@ -17,7 +17,7 @@ function preload() {
 }
 
 function create() {
-    var map = new Phaser.Image(game, 0, 0, 'zelerd-map');
+    var map = new Phaser.Image(game, 0, 0, 'screens', 'zelerd.png');
     map.inputEnabled = true;
     game.stage.addChild(map);
 

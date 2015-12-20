@@ -1,0 +1,345 @@
+{
+	"meta": {
+		"image": "sprites.png",
+		"size": {"w":392,"h":361},
+		"scale": "1"
+	},
+	"frames": {
+		"clock-06.png":
+		{
+			"frame": {"x":0,"y":0,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"miss-3.png":
+		{
+			"frame": {"x":364,"y":298,"w":10,"h":8},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":8},
+			"sourceSize": {"w":10,"h":8}
+		},
+		"clock-01.png":
+		{
+			"frame": {"x":0,"y":82,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-02.png":
+		{
+			"frame": {"x":82,"y":82,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-03.png":
+		{
+			"frame": {"x":164,"y":0,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-04.png":
+		{
+			"frame": {"x":164,"y":82,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-05.png":
+		{
+			"frame": {"x":0,"y":164,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-00.png":
+		{
+			"frame": {"x":82,"y":164,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-07.png":
+		{
+			"frame": {"x":164,"y":164,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-08.png":
+		{
+			"frame": {"x":246,"y":0,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-09.png":
+		{
+			"frame": {"x":246,"y":82,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-10.png":
+		{
+			"frame": {"x":246,"y":164,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"clock-11.png":
+		{
+			"frame": {"x":0,"y":246,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"heavy-infantry-fire-1.png":
+		{
+			"frame": {"x":82,"y":246,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"moro-fire-2.png":
+		{
+			"frame": {"x":146,"y":246,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"armoured-infantry-fire-1.png":
+		{
+			"frame": {"x":210,"y":246,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"moro-fire-1.png":
+		{
+			"frame": {"x":82,"y":278,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"mechanized-infantry-fire-2.png":
+		{
+			"frame": {"x":146,"y":278,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"mechanized-infantry-fire-1.png":
+		{
+			"frame": {"x":210,"y":278,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"infantry-fire-2.png":
+		{
+			"frame": {"x":328,"y":0,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"infantry-fire-1.png":
+		{
+			"frame": {"x":328,"y":32,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"clock-12.png":
+		{
+			"frame": {"x":82,"y":0,"w":82,"h":82},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+			"sourceSize": {"w":82,"h":82}
+		},
+		"heavy-infantry-fire-2.png":
+		{
+			"frame": {"x":328,"y":96,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		},
+		"die-2.png":
+		{
+			"frame": {"x":328,"y":128,"w":63,"h":34},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":63,"h":34},
+			"sourceSize": {"w":63,"h":34}
+		},
+		"die-5.png":
+		{
+			"frame": {"x":328,"y":162,"w":63,"h":34},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":63,"h":34},
+			"sourceSize": {"w":63,"h":34}
+		},
+		"die-4.png":
+		{
+			"frame": {"x":328,"y":196,"w":63,"h":34},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":63,"h":34},
+			"sourceSize": {"w":63,"h":34}
+		},
+		"die-1.png":
+		{
+			"frame": {"x":328,"y":230,"w":63,"h":34},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":63,"h":34},
+			"sourceSize": {"w":63,"h":34}
+		},
+		"die-3.png":
+		{
+			"frame": {"x":328,"y":264,"w":63,"h":34},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":63,"h":34},
+			"sourceSize": {"w":63,"h":34}
+		},
+		"hit-1.png":
+		{
+			"frame": {"x":0,"y":328,"w":34,"h":33},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":34,"h":33},
+			"sourceSize": {"w":34,"h":33}
+		},
+		"hit-2.png":
+		{
+			"frame": {"x":34,"y":328,"w":34,"h":33},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":34,"h":33},
+			"sourceSize": {"w":34,"h":33}
+		},
+		"hit-3.png":
+		{
+			"frame": {"x":68,"y":328,"w":34,"h":33},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":34,"h":33},
+			"sourceSize": {"w":34,"h":33}
+		},
+		"lu-stand.png":
+		{
+			"frame": {"x":274,"y":246,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"sal-stand.png":
+		{
+			"frame": {"x":274,"y":278,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"mechanized-infantry-stand.png":
+		{
+			"frame": {"x":102,"y":328,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"moro-stand.png":
+		{
+			"frame": {"x":134,"y":328,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"armoured-infantry-stand.png":
+		{
+			"frame": {"x":166,"y":328,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"jesse-stand.png":
+		{
+			"frame": {"x":198,"y":328,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"infantry-stand.png":
+		{
+			"frame": {"x":230,"y":328,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"moro-navicon.png":
+		{
+			"frame": {"x":328,"y":298,"w":16,"h":24},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":16,"h":24},
+			"sourceSize": {"w":16,"h":24}
+		},
+		"miss-2.png":
+		{
+			"frame": {"x":344,"y":298,"w":10,"h":8},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":8},
+			"sourceSize": {"w":10,"h":8}
+		},
+		"miss-1.png":
+		{
+			"frame": {"x":354,"y":298,"w":10,"h":8},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":10,"h":8},
+			"sourceSize": {"w":10,"h":8}
+		},
+		"armoured-infantry-fire-2.png":
+		{
+			"frame": {"x":328,"y":64,"w":64,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":64,"h":32},
+			"sourceSize": {"w":64,"h":32}
+		}
+	}
+}

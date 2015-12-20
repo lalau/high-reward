@@ -144,5 +144,17 @@
         "name": "Defense Store",
         "portrait": "man-4",
         "workScript": "work-2"
+    },
+    "regin": {
+        "name": "Regin Vales",
+        "portrait": "regin"
+    },
+    "regin-arrogant": {
+        "name": "Regin Vales",
+        "portrait": "regin-arrogant"
+    },
+    "regin-angry": {
+        "name": "Regin Vales",
+        "portrait": "regin-angry"
     }
 }

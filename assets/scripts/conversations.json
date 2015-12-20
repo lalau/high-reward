@@ -3,7 +3,7 @@
         {
             "position": "top",
             "speaker": "moro",
-            "text": "..Dang! Everything is gone.."
+            "text": "Everything is gone.."
         },
         {
             "position": "top",
@@ -184,7 +184,7 @@
     "collector-refuse": {
         "config" : {
             "position": "center",
-            "speaker": "regin"
+            "speaker": "regin-angry"
         },
         "texts": [
             {
@@ -287,23 +287,39 @@
 
     "collector-fight": {
         "config" : {
-            "position": "center",
-            "speaker": "regin"
+            "position": "center"
         },
         "texts": [
             {
+                "speaker": "regin-arrogant",
                 "text": "Haha~ You want to try?"
             },
             {
+                "speaker": "regin-angry",
                 "text": "I will show you what I am capable of!"
             }
         ]
     },
 
-    "collector-fight-failed": {
+    "collector-fight-won": {
         "config" : {
             "position": "center",
-            "speaker": "regin"
+            "speaker": "regin-angry"
+        },
+        "text": [
+            {
+                "text": "These people are really a joke.. Next week I will bring some stronger helpers. Let's see!"
+            },
+            {
+                "text": "It wouldn't be that simple next week!"
+            }
+        ]
+    },
+
+    "collector-fight-lost": {
+        "config" : {
+            "position": "center",
+            "speaker": "regin-arrogant"
         },
         "texts": [
             {
@@ -352,7 +368,7 @@
     "collector-unable-to-pay": {
         "config" : {
             "position": "center",
-            "speaker": "regin"
+            "speaker": "regin-angry"
         },
         "texts": [
             {
