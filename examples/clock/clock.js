@@ -16,7 +16,7 @@ var _ = {
 };
 
 function preload() {
-    var assetLoader = new AssetLoader(game, '../assets/');
+    var assetLoader = new AssetLoader(game);
     assetLoader.load();
 }
 
