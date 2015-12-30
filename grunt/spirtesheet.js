@@ -48,7 +48,7 @@ module.exports = function (grunt) {
 
     function getHash(path, name, callback) {
         // var json = fs.readFileSync(path + '/' + name + '.json', 'utf8');
-        exec('identify -verbose ' + path + '/' + name + '.png | grep signature', function (err, stdout, stderr) {
+        exec('identify -verbose ' + path + '/' + name + '.png | grep signature', function (err, stdout) {
             callback({
                 // json: crypto.createHash('md5').update(json + keyRenewVersion, 'utf8').digest('hex'),
                 spritesheet: crypto.createHash('md5').update(stdout + keyRenewVersion, 'utf8').digest('hex')
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
         try {
             fs.statSync(outputPath);
         } catch (e) {
-            mkdirp(outputPath, function (err) {
+            mkdirp(outputPath, function () {
                 compileSpritesheet.call(self, options);
             });
             return;
