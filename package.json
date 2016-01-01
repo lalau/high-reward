@@ -7,7 +7,7 @@
     "example": "./node_modules/wzrd/bin.js examples/example.js",
     "spritesheet": "grunt spritesheet",
     "start": "./node_modules/wzrd/bin.js game/game.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/mocha/bin/mocha tests/unit/ --recursive",
     "lint": "eslint .",
     "validate": "npm ls"
   },

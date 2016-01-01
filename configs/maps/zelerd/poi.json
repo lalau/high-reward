@@ -7,11 +7,18 @@
         "key": "osroth"
     },
     "zelerd-city": {
+        "key": "zelerd-city",
         "x": 352,
         "y": 310,
         "type": "city",
         "name": "Zelerd City",
-        "key": "zelerd-city",
+        "description": "The city is showing an acient style with its three spires in cyan color. The majestic and large castle town is full of energetic people year long. You can buy everything on this land here, if you have the money.",
+        "airport": true,
+        "attributes": {
+            "durability": 120,
+            "attack": 100,
+            "defense": 100
+        },
         "stores": [
             {
                 "name": "Sarelo Weapon Store",

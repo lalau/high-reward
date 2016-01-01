@@ -16,6 +16,7 @@ var information = require('./information/information.js');
 var clock = require('./clock/clock.js');
 var store = require('./store/store.js');
 var bulletin = require('./bulletin/bulletin.js');
+var cityInfo = require('./city-info/city-info.js');
 var contentUpdated = false;
 var game;
 
@@ -78,6 +79,9 @@ function getExampleLib(hash) {
         break;
     case '#bulletin':
         exampleLib = bulletin;
+        break;
+    case '#city-info':
+        exampleLib = cityInfo;
         break;
     default:
         exampleLib = troopInfo;
