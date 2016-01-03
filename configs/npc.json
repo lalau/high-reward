@@ -15,6 +15,10 @@
         "name": "Weapon",
         "portrait": "girl-4"
     },
+    "poi-item-store": {
+        "name": "Item",
+        "portrait": "woman-8"
+    },
     "nurse": {
         "name": "Nurse",
         "portrait": ["girl-1", "girl-2"],

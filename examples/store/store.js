@@ -16,7 +16,7 @@ function init() {
 
     game.state.start(InitGame.NAME, undefined, undefined, function() {
         game.gameState = gameStateUtil.getNewState(game);
-        stores = game.gameState.currentRegion.getPoi('zelerd-city').stores;
+        stores = game.gameState.currentRegion.getPoi('west-zelerd-city').stores;
         stores.forEach(function(store) {
             storeMap[store.name] = store;
             selectStore.appendChild(createOption(store));

@@ -1,0 +1,34 @@
+{
+    "recovery-10": {
+        "name": "Med Kit 1",
+        "type": "recovery",
+        "typeName": "Recovery",
+        "key": "recovery-10",
+        "price": 10,
+        "amount": 10
+    },
+    "recovery-25": {
+        "name": "Med Kit 2",
+        "type": "recovery",
+        "typeName": "Recovery",
+        "key": "recovery-25",
+        "price": 40,
+        "amount": 25
+    },
+    "recovery-50": {
+        "name": "Med Kit 3",
+        "type": "recovery",
+        "typeName": "Recovery",
+        "key": "recovery-50",
+        "price": 100,
+        "amount": 50
+    },
+    "recovery-max": {
+        "name": "Med Kit 4",
+        "type": "recovery",
+        "typeName": "Recovery",
+        "key": "recovery-max",
+        "price": 250,
+        "amount": 9999
+    }
+}

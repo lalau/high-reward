@@ -80,11 +80,79 @@
         ]
     },
     "west-zelerd-city": {
+        "key": "west-zelerd-city",
         "x": 280,
         "y": 274,
         "type": "city",
         "name": "West Zelerd City",
-        "key": "west-zelerd-city"
+        "description": "As renowned as Zelerd City in this land, it is one of the top business city. The quote \"The life of this world is made of gold\" came from the mayor of this city.",
+        "airport": false,
+        "attributes": {
+            "durability": 50,
+            "attack": 30,
+            "defense": 25
+        },
+        "stores": [
+            {
+                "name": "West Eichis Weapon Store",
+                "type": "weapon",
+                "offers": [
+                    { "key": "tima" },
+                    { "key": "punav" },
+                    { "key": "canan-1688" },
+                    { "key": "canan-2788" }
+                ]
+            },
+            {
+                "name": "Tatantics Weapon Store",
+                "type": "weapon",
+                "offers": [
+                    { "key": "punav" },
+                    { "key": "velace" },
+                    { "key": "canan-2788" },
+                    { "key": "acus-type-a" }
+                ]
+            },
+            {
+                "name": "Ruidzane Protection Store",
+                "type": "protection",
+                "offers": [
+                    { "key": "cloth-armor" },
+                    { "key": "leather-armor" },
+                    { "key": "aluminium-armor" },
+                    { "key": "copper-armor" }
+                ]
+            },
+            {
+                "name": "Hokithorn Protection Store",
+                "type": "protection",
+                "offers": [
+                    { "key": "leather-armor" },
+                    { "key": "copper-armor" },
+                    { "key": "iron-armor" },
+                    { "key": "heavy-iron-armor" }
+                ]
+            },
+            {
+                "name": "Sautern Agency",
+                "type": "agency",
+                "offers": [
+                    { "key": "infantry" },
+                    { "key": "infantry", "preset": "a" },
+                    { "key": "infantry", "preset": "b" }
+                ]
+            },
+            {
+                "name": "Youlyn Pharmacy",
+                "type": "item",
+                "offers": [
+                    { "key": "recovery-10" },
+                    { "key": "recovery-25" },
+                    { "key": "recovery-50" },
+                    { "key": "recovery-max" }
+                ]
+            }
+        ]
     },
     "niflontia": {
         "x": 177,
