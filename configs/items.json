@@ -29,6 +29,6 @@
         "typeName": "Recovery",
         "key": "recovery-max",
         "price": 250,
-        "amount": 9999
+        "amount": 100
     }
 }

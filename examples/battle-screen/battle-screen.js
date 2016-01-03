@@ -19,8 +19,16 @@ function init() {
     game.state.add(SelectOptions.NAME, SelectOptions);
 
     game.state.start(InitGame.NAME, undefined, undefined, function() {
+        var regionalTroop = battleUtil.getRegionalTroop();
+
+        regionalTroop.members.forEach(function(unit) {
+            if (unit) {
+                unit.updateItem('item', 'recovery-10');
+            }
+        });
+
         game.gameState = gameStateUtil.getNewState(game);
-        game.state.start(Battle.NAME, undefined, undefined, battleUtil.getRegionalTroop(), game.gameState.troops.moro);
+        game.state.start(Battle.NAME, undefined, undefined, regionalTroop, game.gameState.troops.moro);
         controlButton.innerHTML = 'Pause';
     });
 

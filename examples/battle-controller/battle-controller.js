@@ -43,6 +43,12 @@ function init() {
     troop1.formationIndex = 6;
     troop2.formationIndex = 6;
 
+    troop1.members.forEach(function(unit) {
+        if (unit) {
+            unit.updateItem('item', 'recovery-10');
+        }
+    });
+
     battle = new BattleController(troop1, troop2);
 
     document.querySelector('#next').addEventListener('click', function() {
@@ -72,7 +78,7 @@ function formatRoundInfo(battle) {
             var slotPosition = formation.slots[slotIndex];
             rows[unitIndex] = row;
             row.push(unitIndex === 0 ? 'L' : unitIndex,
-                unit.attrs.hp,
+                unit.attrs.hp + '/' + unit.attrs.maxHp,
                 slotPosition.gx + ',' + slotPosition.gy, '', '',
                 status.suppressedUnits.indexOf(unit) >= 0 ? 'x' : '',
                 status.candidatesWaitingToFire.filter(function(candidate) {
