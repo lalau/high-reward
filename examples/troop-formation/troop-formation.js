@@ -12,6 +12,17 @@ function init() {
 
     game.state.start(InitGame.NAME, undefined, undefined, function() {
         game.gameState = gameStateUtil.getNewState(game);
+
+        game.gameState.troops.moro.members.forEach(function(unit, unitIndex) {
+            if (unit) {
+                unit.updateItem('item', 'recovery-10');
+            }
+        });
+
+        game.gameState.troops.moro.members[1].updateItem('weapon');
+        game.gameState.troops.moro.members[1].updateItem('protection');
+        game.gameState.troops.moro.members[1].updateItem('item');
+
         game.state.start(TroopFormation.NAME, undefined, undefined, 'moro');
         updateDebugInfo();
         var readyInterval = setInterval(function() {

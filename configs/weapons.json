@@ -48,7 +48,7 @@
         "name": "Acus Type-A",
         "type": "rifle",
         "typeName": "Rifle",
-        "key": "velace",
+        "key": "acus-type-a",
         "price": 1000,
         "attack": 20,
         "shoot": 8
