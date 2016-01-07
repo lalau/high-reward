@@ -381,5 +381,12 @@
                 "next": "collector-next-week"
             }
         ]
-    }
+    },
+
+    "battle-lose": [
+        {
+            "type": "information",
+            "text": "Not going well... Retreat!"
+        }
+    ]
 }

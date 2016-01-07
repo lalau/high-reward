@@ -8,6 +8,12 @@
     "battle-win-hard": [
         "We barely won...\nAcquired ${amount}G!"
     ],
+    "battle-win-easy": [
+        "It's a easy win!\nAcquired ${amount}G!"
+    ],
+    "battle-lose": [
+        "Sigh... Can't keep it up... retreat. Retreat!"
+    ],
     "battle-retreat": [
         "Too bad we failed...\nRetreating to ${name}."
     ]

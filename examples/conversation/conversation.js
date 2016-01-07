@@ -88,6 +88,7 @@ function getSetup() {
                     '<option value="hospital,treatment">Hospital - Treatment</option>' +
                     '<option value="conversation,collector-introduction">Collector - Introduction</option>' +
                     '<option value="conversation,collector-collect">Collector - Collect</option>' +
+                    '<option value="conversation,battle-lose">Conversation - Battle Lose</option>' +
                 '</select>' +
             '</div>';
 }

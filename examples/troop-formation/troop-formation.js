@@ -13,7 +13,7 @@ function init() {
     game.state.start(InitGame.NAME, undefined, undefined, function() {
         game.gameState = gameStateUtil.getNewState(game);
 
-        game.gameState.troops.moro.members.forEach(function(unit, unitIndex) {
+        game.gameState.troops.moro.members.forEach(function(unit) {
             if (unit) {
                 unit.updateItem('item', 'recovery-10');
             }
