@@ -1,10 +1,63 @@
 {
     "osroth": {
+        "key": "osroth",
         "x": 312,
         "y": 374,
         "type": "city",
         "name": "Osroth",
-        "key": "osroth"
+        "description": "The suburb city of zelerd city and west zelerd city. There are many luxury residence as well as unique buildings here. Couple years ago petting dogs became popular. A lot of stylish dog houses can be seen here.",
+        "airport": false,
+        "attributes": {
+            "durability": 60,
+            "attack": 40,
+            "defense": 45
+        },
+        "stores": [
+            {
+                "name": "Palaskens Weapon Store",
+                "type": "weapon",
+                "offers": [
+                    { "key": "velace" },
+                    { "key": "acus-type-a" },
+                    { "key": "lurefit" }
+                ]
+            },
+            {
+                "name": "Ratatiret Protection Store",
+                "type": "protection",
+                "offers": [
+                    { "key": "leather-armor" },
+                    { "key": "copper-armor" },
+                    { "key": "iron-armor" },
+                    { "key": "heavy-iron-armor" }
+                ]
+            },
+            {
+                "name": "Lassychest Agency",
+                "type": "agency",
+                "offers": [
+                    { "key": "infantry" },
+                    { "key": "infantry", "preset": "a" },
+                    { "key": "infantry", "preset": "b" }
+                ]
+            },
+            {
+                "name": "Kiri Luiz Pharmacy",
+                "type": "item",
+                "offers": [
+                    { "key": "recovery-10" },
+                    { "key": "recovery-25" },
+                    { "key": "recovery-50" },
+                    { "key": "recovery-max" }
+                ]
+            },
+            {
+                "name": "Theroux Elle Accessory"
+            },
+            {
+                "name": "Aiberg Cannon Arsenal"
+            }
+        ]
     },
     "zelerd-city": {
         "key": "zelerd-city",
@@ -85,7 +138,7 @@
         "y": 274,
         "type": "city",
         "name": "West Zelerd City",
-        "description": "As renowned as Zelerd City in this land, it is one of the top business city. The quote \"The life of this world is made of gold\" came from the mayor of this city.",
+        "description": "As renowned as Zelerd City on this land, it is one of the top business city. The quote \"You can buy anything with gold\" came from the mayor of this city.",
         "airport": false,
         "attributes": {
             "durability": 50,
@@ -155,73 +208,287 @@
         ]
     },
     "niflontia": {
+        "key": "niflontia",
         "x": 177,
         "y": 305,
         "type": "stronghold",
         "name": "Niflontia",
-        "key": "niflontia"
+        "description": "This is garrison of Zelerd's regular army, also the center of this country's military force. They have some of the best equipments but the soldiers are just subpar. Experienced mercenaries call them \"The Toy Army\".",
+        "airport": false,
+        "attributes": {
+            "durability": 70,
+            "attack": 90,
+            "defense": 100
+        }
     },
     "farenrath": {
+        "key": "farenrath",
         "x": 176,
         "y": 210,
         "type": "city",
         "name": "Farenrath",
-        "key": "farenrath"
+        "description": "20% of the seafood on this land come from here. The special \"smell\" from the dry pickle produced here can be noticed far away. They are best suited for hot pot in the winter.",
+        "airport": false,
+        "attributes": {
+            "durability": 80,
+            "attack": 50,
+            "defense": 60
+        },
+        "stores": [
+            {
+                "name": "De Immo Weapon Store",
+                "type": "weapon",
+                "offers": [
+                    { "key": "tima" },
+                    { "key": "punav" },
+                    { "key": "canan-1688" },
+                    { "key": "canan-2788" }
+                ]
+            },
+            {
+                "name": "Metaxafi Protection Store",
+                "type": "protection",
+                "offers": [
+                    { "key": "leather-armor" },
+                    { "key": "copper-armor" },
+                    { "key": "iron-armor" },
+                    { "key": "heavy-iron-armor" }
+                ]
+            },
+            {
+                "name": "Racas Agency",
+                "type": "agency",
+                "offers": [
+                    { "key": "armoured-infantry" },
+                    { "key": "armoured-infantry", "preset": "a" },
+                    { "key": "armoured-infantry", "preset": "b" }
+                ]
+            },
+            {
+                "name": "Tamiluxa Pharmacy",
+                "type": "item",
+                "offers": [
+                    { "key": "recovery-10" },
+                    { "key": "recovery-25" },
+                    { "key": "recovery-50" },
+                    { "key": "recovery-max" }
+                ]
+            },
+            {
+                "name": "Lagetis Tank Plant"
+            },
+            {
+                "name": "Bedeante Cannon Arsenal"
+            }
+        ]
     },
     "yamanraetia-island": {
+        "key": "yamanraetia-island",
         "x": 113,
         "y": 261,
         "type": "city",
         "name": "Yamanraetia Island",
-        "key": "yamanraetia-island"
+        "description": "Once the exile location of criminals, now it is a tourist city of Zelerd. The city is renowned for the abundance of beautiful dancers, as well as a popular suicide site.",
+        "airport": true,
+        "attributes": {
+            "durability": 100,
+            "attack": 80,
+            "defense": 100
+        },
+        "stores": [
+            {
+                "name": "Bhashnis Weapon Store",
+                "type": "weapon",
+                "offers": [
+                    { "key": "punav" },
+                    { "key": "velace" },
+                    { "key": "canan-2788" },
+                    { "key": "acus-type-a" }
+                ]
+            },
+            {
+                "name": "Ragunos Protection Store",
+                "type": "protection",
+                "offers": [
+                    { "key": "leather-armor" },
+                    { "key": "copper-armor" },
+                    { "key": "iron-armor" },
+                    { "key": "heavy-iron-armor" }
+                ]
+            },
+            {
+                "name": "Khatallame Agency",
+                "type": "agency",
+                "offers": [
+                    { "key": "mechanized-infantry" },
+                    { "key": "mechanized-infantry", "preset": "a" },
+                    { "key": "mechanized-infantry", "preset": "b" }
+                ]
+            },
+            {
+                "name": "Ternoster Agency"
+            },
+            {
+                "name": "Zamakilu Pharmacy",
+                "type": "item",
+                "offers": [
+                    { "key": "recovery-10" },
+                    { "key": "recovery-25" },
+                    { "key": "recovery-50" },
+                    { "key": "recovery-max" }
+                ]
+            },
+            {
+                "name": "Cata Accessory"
+            }
+        ]
     },
     "old-zelerd-city": {
+        "key": "old-zelerd-city",
         "x": 296,
         "y": 162,
         "type": "city",
         "name": "Old Zelerd City",
-        "key": "old-zelerd-city"
+        "description": "The central city of the last century on this land. The city was larger and more prosperous at that time. Now there are only a few villages left in the abandoned ruins.",
+        "airport": false,
+        "attributes": {
+            "durability": 10,
+            "attack": 1,
+            "defense": 1
+        },
+        "underdeveloped": true
     },
     "citadel-of-yuradean": {
+        "key": "citadel-of-yuradean",
         "x": 313,
         "y": 25,
         "type": "city",
         "name": "Citadel of Yuradean",
-        "key": "citadel-of-yuradean"
+        "description": "The northern border of Zelerd. All the signs on the street are red, so the city is also called \"The Red Street\". Many famous painters are from here. It also attracts a lot of young and determined artists.",
+        "airport": false,
+        "attributes": {
+            "durability": 110,
+            "attack": 100,
+            "defense": 95
+        },
+        "stores": [
+            {
+                "name": "Rebami Weapon Store",
+                "type": "weapon",
+                "offers": [
+                    { "key": "velace" },
+                    { "key": "acus-type-a" },
+                    { "key": "lurefit" }
+                ]
+            },
+            {
+                "name": "Bettany Protection Store",
+                "type": "protection",
+                "offers": [
+                    { "key": "resin-armor" },
+                    { "key": "iron-armor" },
+                    { "key": "steel-armor" },
+                    { "key": "heavy-iron-armor" }
+                ]
+            },
+            {
+                "name": "Bale Sawyers Agency",
+                "type": "agency",
+                "offers": [
+                    { "key": "armoured-infantry" },
+                    { "key": "armoured-infantry", "preset": "a" },
+                    { "key": "armoured-infantry", "preset": "b" }
+                ]
+            },
+            {
+                "name": "Macken Pharmacy",
+                "type": "item",
+                "offers": [
+                    { "key": "recovery-10" },
+                    { "key": "recovery-25" },
+                    { "key": "recovery-50" },
+                    { "key": "recovery-max" }
+                ]
+            },
+            {
+                "name": "Latai Accessory"
+            },
+            {
+                "name": "Ikegy Tank Plant"
+            },
+            {
+                "name": "Serooki Cannon Arsenal"
+            }
+        ]
     },
     "kulemnos": {
+        "key": "kulemnos",
         "x": 385,
         "y": 61,
         "type": "stronghold",
         "name": "Kulemnos",
-        "key": "kulemnos"
+        "description": "Part of the great strongholds built from last century. It has been modified and continues to be in use today, but the material inside the wall is unknown, which is being researched by archaeologists.",
+        "airport": false,
+        "attributes": {
+            "durability": 95,
+            "attack": 50,
+            "defense": 85
+        }
     },
     "drakegias": {
+        "key": "drakegias",
         "x": 456,
         "y": 134,
         "type": "stronghold",
         "name": "Drakegias",
-        "key": "drakegias"
+        "description": "It is built to defend the invasion of the ambitious northern states such as L'lean and Ashward, but the structue is old now. The main defence force has been moved to Abadan now.",
+        "airport": false,
+        "attributes": {
+            "durability": 80,
+            "attack": 40,
+            "defense": 60
+        }
     },
     "kenhobasam": {
+        "key": "kenhobasam",
         "x": 537,
         "y": 137,
         "type": "stronghold",
         "name": "Kenhobasam",
-        "key": "kenhobasam"
+        "description": "It is built to defend the invasion of the ambitious northern states such as L'lean and Ashward, but the structue is old now. The main defence force has been moved to Koru now.",
+        "airport": false,
+        "attributes": {
+            "durability": 90,
+            "attack": 55,
+            "defense": 35
+        }
     },
     "koru": {
+        "key": "koru",
         "x": 497,
         "y": 201,
         "type": "stronghold",
         "name": "Koru",
-        "key": "koru"
+        "description": "This stronghold as well as Abadan have the main military force of this country. Not only the regular army, but there are also a lot of good mercenaries here. This is the proof of the quote that \"You can buy anything with gold\".",
+        "airport": false,
+        "attributes": {
+            "durability": 80,
+            "attack": 100,
+            "defense": 65
+        }
     },
     "abadan": {
+        "key": "abadan",
         "x": 425,
         "y": 177,
         "type": "stronghold",
         "name": "Abadan",
-        "key": "abadan"
+        "description": "This stronghold as well as Koru have the main military force of this country. Not only the regular army, but there are also a lot of good mercenaries here. This is the proof of the quote that \"You can buy anything with gold\".",
+        "airport": false,
+        "attributes": {
+            "durability": 95,
+            "attack": 70,
+            "defense": 90
+        }
     }
 }
