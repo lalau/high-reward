@@ -1,5 +1,6 @@
 'use strict';
 
+var STATES = require('../../configs/states');
 var InitGame = require('../../lib/states/init-game');
 var TroopFormation = require('../../lib/states/troop-formation');
 var gameStateUtil = require('../../lib/utils/game-state-util');
@@ -7,10 +8,10 @@ var game;
 
 function init() {
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
-    game.state.add(InitGame.NAME, InitGame);
-    game.state.add(TroopFormation.NAME, TroopFormation);
+    game.state.add(STATES.InitGame, InitGame);
+    game.state.add(STATES.TroopFormation, TroopFormation);
 
-    game.state.start(InitGame.NAME, undefined, undefined, function() {
+    game.state.start(STATES.InitGame, undefined, undefined, function() {
         game.gameState = gameStateUtil.getNewState(game);
 
         game.gameState.troops.moro.members.forEach(function(unit) {
@@ -23,7 +24,7 @@ function init() {
         game.gameState.troops.moro.members[1].updateItem('protection');
         game.gameState.troops.moro.members[1].updateItem('item');
 
-        game.state.start(TroopFormation.NAME, undefined, undefined, 'moro');
+        game.state.start(STATES.TroopFormation, undefined, undefined, 'moro');
         updateDebugInfo();
         var readyInterval = setInterval(function() {
             var troopFormation = game.state.states[game.state.current];

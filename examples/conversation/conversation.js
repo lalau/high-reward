@@ -1,5 +1,6 @@
 'use strict';
 
+var STATES = require('../../configs/states');
 var InitGame = require('../../lib/states/init-game');
 var Conversation = require('../../lib/states/conversation');
 var SelectOptions = require('../../lib/states/select-options');
@@ -11,10 +12,10 @@ function init() {
     var selectScript = document.querySelector('#select-script');
 
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
-    game.state.add(InitGame.NAME, InitGame);
-    game.state.add(Conversation.NAME, Conversation);
-    game.state.add(SelectOptions.NAME, SelectOptions);
-    game.state.start(InitGame.NAME);
+    game.state.add(STATES.InitGame, InitGame);
+    game.state.add(STATES.Conversation, Conversation);
+    game.state.add(STATES.SelectOptions, SelectOptions);
+    game.state.start(STATES.InitGame);
 
     selectScript.addEventListener('change', function() {
         var values = selectScript.value.split(',');
@@ -23,7 +24,7 @@ function init() {
         var amount;
 
         if (!scriptKey) {
-            game.state.start(InitGame.NAME);
+            game.state.start(STATES.InitGame);
             return;
         }
 
@@ -31,14 +32,14 @@ function init() {
             game.gameState = gameStateUtil.getNewState(game);
         }
 
-        game.state.start(Conversation.NAME, undefined, undefined, {
+        game.state.start(STATES.Conversation, undefined, undefined, {
             scriptGroup: scriptGroup,
             scriptKey: scriptKey,
             speakerMap: {
                 hospital: npc.hospital
             },
             done: function() {
-                game.state.start(InitGame.NAME);
+                game.state.start(STATES.InitGame);
                 selectScript.value = '';
             },
             data: {

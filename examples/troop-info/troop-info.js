@@ -1,5 +1,6 @@
 'use strict';
 
+var STATES = require('../../configs/states');
 var InitGame = require('../../lib/states/init-game');
 var TroopInfo = require('../../lib/states/troop-info');
 var gameStateUtil = require('../../lib/utils/game-state-util');
@@ -12,12 +13,12 @@ function init() {
     var selectMember = document.querySelector('#select-member');
 
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
-    game.state.add(InitGame.NAME, InitGame);
-    game.state.add(TroopInfo.NAME, TroopInfo);
+    game.state.add(STATES.InitGame, InitGame);
+    game.state.add(STATES.TroopInfo, TroopInfo);
 
-    game.state.start(InitGame.NAME, undefined, undefined, function() {
+    game.state.start(STATES.InitGame, undefined, undefined, function() {
         game.gameState = gameStateUtil.getNewState(game);
-        game.state.start(TroopInfo.NAME, undefined, undefined, 'moro');
+        game.state.start(STATES.TroopInfo, undefined, undefined, 'moro');
         updateSetup('moro');
     });
 

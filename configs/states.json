@@ -1,0 +1,23 @@
+{
+    "BattleMenu": "battle-menu",
+    "Battle": "battle",
+    "Bulletin": "bulletin",
+    "CityInfo": "city-info",
+    "CityMenu": "city-menu",
+    "Collector": "collector",
+    "Conversation": "conversation",
+    "Information": "information",
+    "InitGame": "init-game",
+    "InitRegion": "init-region",
+    "MainMenu": "main-menu",
+    "MoveMenu": "move-menu",
+    "RegionMap": "region-map",
+    "RegionNavigation": "region-navigation",
+    "SelectOptions": "select-options",
+    "StationMenu": "station-menu",
+    "StoreMenu": "store-menu",
+    "Store": "store",
+    "TroopFormation": "troop-formation",
+    "TroopInfo": "troop-info",
+    "TroopMenu": "troop-menu"
+}

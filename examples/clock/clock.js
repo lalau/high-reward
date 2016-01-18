@@ -28,7 +28,7 @@ function create() {
     region.addChild(pointer);
     game.stage.addChild(region);
 
-    worldTime = moment('0632-04-16 00', 'YYYY-MM-DD HH');
+    worldTime = moment('0632-04-16 00 +0000', 'YYYY-MM-DD HH Z').utc();
     dateText = textUtil.renderText(game, 64, 386, worldTime.format('YYYY/MM/DD'), {parent: region, type: 'value', scale: 1, align: 'center'});
     lastUpdatedTime = Date.now();
 }

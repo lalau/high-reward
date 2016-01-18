@@ -1,5 +1,6 @@
 'use strict';
 
+var STATES = require('../../configs/states');
 var InitGame = require('../../lib/states/init-game');
 var Store = require('../../lib/states/store');
 var gameStateUtil = require('../../lib/utils/game-state-util');
@@ -11,21 +12,21 @@ function init() {
     var stores;
 
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
-    game.state.add(InitGame.NAME, InitGame);
-    game.state.add(Store.NAME, Store);
+    game.state.add(STATES.InitGame, InitGame);
+    game.state.add(STATES.Store, Store);
 
-    game.state.start(InitGame.NAME, undefined, undefined, function() {
+    game.state.start(STATES.InitGame, undefined, undefined, function() {
         game.gameState = gameStateUtil.getNewState(game);
         stores = game.gameState.currentRegion.getPoi('west-zelerd-city').stores;
         stores.forEach(function(store) {
             storeMap[store.name] = store;
             selectStore.appendChild(createOption(store));
         });
-        game.state.start(Store.NAME, undefined, undefined, 'moro', storeMap[selectStore.value]);
+        game.state.start(STATES.Store, undefined, undefined, 'moro', storeMap[selectStore.value]);
     });
 
     selectStore.addEventListener('change', function() {
-        game.state.start(Store.NAME, undefined, undefined, 'moro', storeMap[selectStore.value]);
+        game.state.start(STATES.Store, undefined, undefined, 'moro', storeMap[selectStore.value]);
     });
 
     return game;

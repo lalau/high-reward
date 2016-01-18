@@ -1,5 +1,6 @@
 'use strict';
 
+var STATES = require('../../configs/states');
 var InitGame = require('../../lib/states/init-game');
 var Battle = require('../../lib/states/battle');
 var BattleMenu = require('../../lib/states/battle-menu');
@@ -13,14 +14,14 @@ var controlButton;
 
 function init() {
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
-    game.state.add(InitGame.NAME, InitGame);
-    game.state.add(Battle.NAME, Battle);
-    game.state.add(BattleMenu.NAME, BattleMenu);
-    game.state.add(Information.NAME, Information);
-    game.state.add(SelectOptions.NAME, SelectOptions);
-    game.state.add(Conversation.NAME, Conversation);
+    game.state.add(STATES.InitGame, InitGame);
+    game.state.add(STATES.Battle, Battle);
+    game.state.add(STATES.BattleMenu, BattleMenu);
+    game.state.add(STATES.Information, Information);
+    game.state.add(STATES.SelectOptions, SelectOptions);
+    game.state.add(STATES.Conversation, Conversation);
 
-    game.state.start(InitGame.NAME, undefined, undefined, function() {
+    game.state.start(STATES.InitGame, undefined, undefined, function() {
         var regionalTroop = battleUtil.getRegionalTroop();
 
         regionalTroop.members.forEach(function(unit) {
@@ -30,7 +31,7 @@ function init() {
         });
 
         game.gameState = gameStateUtil.getNewState(game);
-        game.state.start(Battle.NAME, undefined, undefined, regionalTroop, game.gameState.troops.moro);
+        game.state.start(STATES.Battle, undefined, undefined, regionalTroop, game.gameState.troops.moro);
         controlButton.innerHTML = 'Pause';
     });
 

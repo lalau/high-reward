@@ -36,8 +36,8 @@ var EXAMPLE_MEMBERS_2 = [
 function init() {
     var commander1 = new Commander({ key: 'moro' });
     var commander2 = new Commander({ key: 'moro' });
-    var troop1 = new Troop(commander1, EXAMPLE_MEMBERS_1);
-    var troop2 = new Troop(commander2, EXAMPLE_MEMBERS_2);
+    var troop1 = new Troop({unit: commander1}, EXAMPLE_MEMBERS_1);
+    var troop2 = new Troop({unit: commander2}, EXAMPLE_MEMBERS_2);
     var battle;
 
     troop1.formationIndex = 6;

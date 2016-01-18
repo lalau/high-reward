@@ -1,5 +1,6 @@
 'use strict';
 
+var STATES = require('../../configs/states');
 var pois = require('../../configs/maps/zelerd/poi');
 var InitGame = require('../../lib/states/init-game');
 var CityInfo = require('../../lib/states/city-info');
@@ -8,12 +9,12 @@ var game;
 
 function init() {
     game = new Phaser.Game(640, 400, Phaser.AUTO, 'game', null, false, false);
-    game.state.add(InitGame.NAME, InitGame);
-    game.state.add(CityInfo.NAME, CityInfo);
+    game.state.add(STATES.InitGame, InitGame);
+    game.state.add(STATES.CityInfo, CityInfo);
 
-    game.state.start(InitGame.NAME, undefined, undefined, function() {
+    game.state.start(STATES.InitGame, undefined, undefined, function() {
         game.gameState = gameStateUtil.getNewState(game);
-        game.state.start(CityInfo.NAME, undefined, undefined, pois['zelerd-city']);
+        game.state.start(STATES.CityInfo, undefined, undefined, pois['zelerd-city']);
     });
 
     return game;
