@@ -24,13 +24,13 @@ function init() {
     game.state.start(STATES.InitGame, undefined, undefined, function() {
         var regionalTroop = battleUtil.getRegionalTroop();
 
-        regionalTroop.members.forEach(function(unit) {
+        game.gameState = gameStateUtil.getNewState(game);
+        game.gameState.troops.moro.members.forEach(function(unit) {
             if (unit) {
                 unit.updateItem('item', 'recovery-10');
             }
         });
 
-        game.gameState = gameStateUtil.getNewState(game);
         game.state.start(STATES.Battle, undefined, undefined, regionalTroop, game.gameState.troops.moro);
         controlButton.innerHTML = 'Pause';
     });

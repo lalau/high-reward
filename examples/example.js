@@ -35,7 +35,11 @@ function initExample(lib) {
     }
 
     game = lib.init();
-    game.stateUtil = new StateUtil(game);
+
+    if (game) {
+        game.stateUtil = new StateUtil(game);
+    }
+
     window.game = game;
 }
 

@@ -53,9 +53,12 @@ function init() {
 
     document.querySelector('#next').addEventListener('click', function() {
         var newRoundInfo = document.createElement('pre');
+        var gameNode = document.querySelector('#game');
+
         battle.nextRound();
         newRoundInfo.innerHTML = formatRoundInfo(battle);
-        document.querySelector('#game').appendChild(newRoundInfo);
+        gameNode.appendChild(newRoundInfo);
+        gameNode.scrollTop = gameNode.scrollHeight;
     });
 
     window.battle = battle;
