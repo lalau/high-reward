@@ -9,6 +9,7 @@ var SelectOptions = require('../../lib/states/select-options');
 var Conversation = require('../../lib/states/conversation');
 var gameStateUtil = require('../../lib/utils/game-state-util');
 var battleUtil = require('../../lib/utils/battle-util');
+var Unit = require('../../lib/models/unit');
 var game;
 var controlButton;
 
@@ -25,9 +26,24 @@ function init() {
         var regionalTroop = battleUtil.getRegionalTroop();
 
         game.gameState = gameStateUtil.getNewState(game);
-        game.gameState.troops.moro.members.forEach(function(unit) {
+        game.gameState.troops.moro.members.forEach(function(unit, unitIndex) {
             if (unit) {
                 unit.updateItem('item', 'recovery-10');
+            } else if (Math.random() > 0.5) {
+                game.gameState.troops.moro.addMember(new Unit({
+                    key: 'infantry',
+                    unitConfig: {
+                        weapon: 'canan-1688',
+                        protection: 'aluminium-armor',
+                        items: ['recovery-10']
+                    }
+                }), unitIndex);
+            }
+        });
+
+        regionalTroop.members.forEach(function(unit) {
+            if (unit && Math.random() < 0.2) {
+                unit.updateItem('weapon');
             }
         });
 

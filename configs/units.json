@@ -116,5 +116,45 @@
         },
         "weaponTypes": [ "pistol", "rifle", "mg" ],
         "protectionTypes": [ "light-armor", "armor", "heavy-armor" ]
+    },
+    "heavy-infantry": {
+        "key": "heavy-infantry",
+        "name": "Heavy Infantry",
+        "attributes": {
+            "hp": 90,
+            "shoot": 45,
+            "defence": 45,
+            "trading": 0,
+            "performance": 0,
+            "building": 10,
+            "expert": 0
+        },
+        "max": {
+            "hp": 203,
+            "shoot": 102,
+            "defence": 102
+        },
+        "presets": {
+            "a": {
+                "attributes": {
+                    "hp": 112,
+                    "shoot": 56,
+                    "defence": 56,
+                    "building": 12,
+                    "expert": 50
+                }
+            },
+            "b": {
+                "attributes": {
+                    "hp": 134,
+                    "shoot": 67,
+                    "defence": 67,
+                    "building": 14,
+                    "expert": 99
+                }
+            }
+        },
+        "weaponTypes": [ "pistol", "rifle", "mg" ],
+        "protectionTypes": [ "light-armor", "armor", "heavy-armor" ]
     }
 }
