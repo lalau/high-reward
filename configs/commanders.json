@@ -11,7 +11,7 @@
             "trading": 0,
             "performance": 0,
             "building": 0,
-            "expert": 0
+            "expertRaw": 0
         },
         "weapon": "lurefit",
         "protection": "copper-armor",
@@ -35,7 +35,7 @@
             "trading": 0,
             "performance": 0,
             "building": 0,
-            "expert": 0
+            "expertRaw": 0
         },
         "max": {
             "hp": 365,
@@ -55,7 +55,7 @@
             "trading": 0,
             "performance": 0,
             "building": 0,
-            "expert": 0
+            "expertRaw": 0
         },
         "max": {
             "hp": 228,
@@ -75,7 +75,7 @@
             "trading": 0,
             "performance": 0,
             "building": 12,
-            "expert": 0
+            "expertRaw": 0
         },
         "max": {
             "hp": 342,
@@ -96,7 +96,7 @@
             "trading": 12,
             "performance": 0,
             "building": 0,
-            "expert": 0
+            "expertRaw": 0
         },
         "max": {
             "hp": 205,
@@ -117,7 +117,7 @@
             "trading": 0,
             "performance": 12,
             "building": 0,
-            "expert": 0
+            "expertRaw": 0
         },
         "max": {
             "hp": 205,

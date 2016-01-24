@@ -9,7 +9,7 @@
             "trading": 0,
             "performance": 0,
             "building": 2,
-            "expert": 0
+            "expertRaw": 0
         },
         "presets": {
             "a": {
@@ -17,7 +17,7 @@
                     "hp": 20,
                     "shoot": 10,
                     "defence": 10,
-                    "expert": 50
+                    "expertRaw": 5000
                 }
             },
             "b": {
@@ -25,7 +25,7 @@
                     "hp": 23,
                     "shoot": 11,
                     "defence": 11,
-                    "expert": 99
+                    "expertRaw": 9900
                 }
             }
         },
@@ -47,7 +47,7 @@
             "trading": 0,
             "performance": 0,
             "building": 5,
-            "expert": 0
+            "expertRaw": 0
         },
         "max": {
             "hp": 64,
@@ -61,7 +61,7 @@
                     "shoot": 17,
                     "defence": 17,
                     "building": 6,
-                    "expert": 50
+                    "expertRaw": 5000
                 }
             },
             "b": {
@@ -70,7 +70,7 @@
                     "shoot": 20,
                     "defence": 20,
                     "building": 7,
-                    "expert": 99
+                    "expertRaw": 9900
                 }
             }
         },
@@ -87,7 +87,7 @@
             "trading": 0,
             "performance": 0,
             "building": 10,
-            "expert": 0
+            "expertRaw": 0
         },
         "max": {
             "hp": 114,
@@ -101,7 +101,7 @@
                     "shoot": 31,
                     "defence": 31,
                     "building": 12,
-                    "expert": 50
+                    "expertRaw": 5000
                 }
             },
             "b": {
@@ -110,7 +110,7 @@
                     "shoot": 37,
                     "defence": 37,
                     "building": 14,
-                    "expert": 99
+                    "expertRaw": 9900
                 }
             }
         },
@@ -127,7 +127,7 @@
             "trading": 0,
             "performance": 0,
             "building": 10,
-            "expert": 0
+            "expertRaw": 0
         },
         "max": {
             "hp": 203,
@@ -141,7 +141,7 @@
                     "shoot": 56,
                     "defence": 56,
                     "building": 12,
-                    "expert": 50
+                    "expertRaw": 5000
                 }
             },
             "b": {
@@ -150,7 +150,7 @@
                     "shoot": 67,
                     "defence": 67,
                     "building": 14,
-                    "expert": 99
+                    "expertRaw": 9900
                 }
             }
         },

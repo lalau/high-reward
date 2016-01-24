@@ -12,7 +12,7 @@ var baseAttrs = {
     trading: 0,
     performance: 0,
     building: 0,
-    expert: 0,
+    expertRaw: 0,
     maxHp: 30,
     fatigue: 0
 };
@@ -40,7 +40,7 @@ describe('Commander', function () {
                 trading: 1,
                 performance: 1,
                 building: 1,
-                expert: 1,
+                expertRaw: 1,
                 maxHp: 31,
                 fatigue: 1
             };
@@ -86,6 +86,33 @@ describe('Commander', function () {
             expect(commander.canHandle('weapon', 'lurefit')).to.eql(true);
             expect(commander.canHandle('protection', 'copper-armor')).to.eql(true);
             expect(commander.canHandle('item', 'recovery-10')).to.eql(true);
+        });
+    });
+
+    describe('updateExperts', function() {
+        it('should set attrs computed by the expert and base attrs', function() {
+            var commander = new Commander({key: 'moro'});
+
+            expect(commander.attrs.hp).to.eql(30);
+            expect(commander.attrs.maxHp).to.eql(30);
+            expect(commander.attrs.shoot).to.eql(11);
+            expect(commander.attrs.defence).to.eql(11);
+
+            commander.attrs.expertRaw = 5000;
+            commander.updateExperts();
+
+            expect(commander.attrs.hp).to.eql(37);
+            expect(commander.attrs.maxHp).to.eql(37);
+            expect(commander.attrs.shoot).to.eql(13);
+            expect(commander.attrs.defence).to.eql(13);
+
+            commander.attrs.expertRaw = 99999;
+            commander.updateExperts();
+
+            expect(commander.attrs.hp).to.eql(342);
+            expect(commander.attrs.maxHp).to.eql(342);
+            expect(commander.attrs.shoot).to.eql(125);
+            expect(commander.attrs.defence).to.eql(125);
         });
     });
 });

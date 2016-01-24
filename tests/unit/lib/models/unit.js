@@ -12,7 +12,7 @@ var baseAttrs = {
     trading: 0,
     performance: 0,
     building: 2,
-    expert: 0,
+    expertRaw: 0,
     maxHp: 16,
     fatigue: 0
 };
@@ -36,7 +36,7 @@ describe('Unit', function() {
                 trading: 0,
                 performance: 0,
                 building: 2,
-                expert: 50,
+                expertRaw: 5000,
                 maxHp: 20,
                 fatigue: 0
             };
@@ -56,7 +56,7 @@ describe('Unit', function() {
                 trading: 1,
                 performance: 1,
                 building: 1,
-                expert: 1,
+                expertRaw: 1,
                 maxHp: 17,
                 fatigue: 1
             };
@@ -144,6 +144,45 @@ describe('Unit', function() {
             expect(unit.canHandle('weapon', 'tima')).to.eql(true);
             expect(unit.canHandle('protection', 'heavy-iron-armor')).to.eql(false);
             expect(unit.canHandle('item', 'recovery-10')).to.eql(true);
+        });
+    });
+
+    describe('getExpert', function() {
+        it('should return normalized value of expert', function() {
+            var unit = new Unit({key: 'infantry'});
+
+            expect(unit.getExpert()).to.eql(0);
+            unit.attrs.expertRaw = 5456;
+            expect(unit.getExpert()).to.eql(54);
+            unit.attrs.expertRaw = 999999;
+            expect(unit.getExpert()).to.eql(999);
+        });
+    });
+
+    describe('updateExperts', function() {
+        it('should set attrs computed by the expert and base attrs', function() {
+            var unit = new Unit({key: 'infantry'});
+
+            expect(unit.attrs.hp).to.eql(16);
+            expect(unit.attrs.maxHp).to.eql(16);
+            expect(unit.attrs.shoot).to.eql(8);
+            expect(unit.attrs.defence).to.eql(8);
+
+            unit.attrs.expertRaw = 5000;
+            unit.updateExperts();
+
+            expect(unit.attrs.hp).to.eql(20);
+            expect(unit.attrs.maxHp).to.eql(20);
+            expect(unit.attrs.shoot).to.eql(10);
+            expect(unit.attrs.defence).to.eql(10);
+
+            unit.attrs.expertRaw = 99999;
+            unit.updateExperts();
+
+            expect(unit.attrs.hp).to.eql(36);
+            expect(unit.attrs.maxHp).to.eql(36);
+            expect(unit.attrs.shoot).to.eql(18);
+            expect(unit.attrs.defence).to.eql(18);
         });
     });
 });

@@ -17,7 +17,7 @@ var baseCommadnerAttrs = {
     trading: 0,
     performance: 0,
     building: 0,
-    expert: 0,
+    expertRaw: 0,
     maxHp: 30,
     fatigue: 0
 };
@@ -28,7 +28,7 @@ var baseUnitAttrs = {
     trading: 0,
     performance: 0,
     building: 2,
-    expert: 0,
+    expertRaw: 0,
     maxHp: 16,
     fatigue: 0
 };
