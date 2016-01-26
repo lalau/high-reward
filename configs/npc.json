@@ -126,7 +126,7 @@
     },
     "jewelry-dealer": {
         "name": "Jewelry Dealer",
-        "portrait": "woman-5",
+        "portrait": ["woman-5", "woman-7"],
         "workScript": "work-5"
     },
     "jewelry-trader": {

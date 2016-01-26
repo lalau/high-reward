@@ -1,4 +1,41 @@
 {
     "key": "zelerd",
-    "name": "Zelerd"
+    "name": "Zelerd",
+    "troops": [
+        {
+            "name": "The Thieves of Cruzer",
+            "units": [
+                {
+                    "key": "cruzer-1"
+                },
+                {
+                    "key": "cruzer-1",
+                    "preset": "a"
+                }
+            ]
+        },
+        {
+            "name": "Prendergast Bandits",
+            "units": [
+                {
+                    "key": "prendergast-1"
+                },
+                {
+                    "key": "prendergast-1",
+                    "preset": "a"
+                }
+            ]
+        },
+        {
+            "name": "Koroajack Clan",
+            "units": [
+                {
+                    "key": "koroajack-1"
+                },
+                {
+                    "key": "koroajack-2"
+                }
+            ]
+        }
+    ]
 }

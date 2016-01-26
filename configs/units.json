@@ -156,5 +156,55 @@
         },
         "weaponTypes": [ "pistol", "rifle", "mg" ],
         "protectionTypes": [ "light-armor", "armor", "heavy-armor" ]
+    },
+    "cruzer-1": {
+        "key": "cruzer-1",
+        "attributes": {
+            "hp": 18,
+            "shoot": 9,
+            "defence": 9
+        },
+        "presets": {
+            "a": {
+                "attributes": {
+                    "hp": 20,
+                    "shoot": 10,
+                    "defence": 10
+                }
+            }
+        }
+    },
+    "prendergast-1": {
+        "key": "prendergast-1",
+        "attributes": {
+            "hp": 18,
+            "shoot": 9,
+            "defence": 9
+        },
+        "presets": {
+            "a": {
+                "attributes": {
+                    "hp": 22,
+                    "shoot": 11,
+                    "defence": 11
+                }
+            }
+        }
+    },
+    "koroajack-1": {
+        "key": "koroajack-1",
+        "attributes": {
+            "hp": 15,
+            "shoot": 7,
+            "defence": 7
+        }
+    },
+    "koroajack-2": {
+        "key": "koroajack-2",
+        "attributes": {
+            "hp": 15,
+            "shoot": 7,
+            "defence": 7
+        }
     }
 }

@@ -23,7 +23,7 @@ function init() {
     game.state.add(STATES.Conversation, Conversation);
 
     game.state.start(STATES.InitGame, undefined, undefined, function() {
-        var regionalTroop = battleUtil.getRegionalTroop();
+        var regionalTroop = battleUtil.getRegionalTroop('zelerd');
 
         game.gameState = gameStateUtil.getNewState(game);
         game.gameState.troops.moro.members.forEach(function(unit, unitIndex) {
@@ -35,15 +35,9 @@ function init() {
                     unitConfig: {
                         weapon: 'canan-1688',
                         protection: 'aluminium-armor',
-                        items: ['recovery-10']
+                        items: ['recovery-10', 'recovery-10']
                     }
                 }), unitIndex);
-            }
-        });
-
-        regionalTroop.members.forEach(function(unit) {
-            if (unit && Math.random() < 0.2) {
-                unit.updateItem('weapon');
             }
         });
 
