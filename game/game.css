@@ -11,3 +11,13 @@
 #game canvas {
     margin: 0 auto;
 }
+
+#linkback {
+    text-align: center;
+    margin: 10px 0;
+}
+
+a:link,a:active,a:hover,a:visited {
+    text-decoration: none;
+    color: #020e65;
+}
