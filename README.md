@@ -1,4 +1,4 @@
 # high-reward
-Remake of the MS-DOS game "High Reward"
+Remake of the DOS game "High Reward"
 
-Work In Progress
+http://www.highrewrd.com/
