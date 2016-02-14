@@ -1,6 +1,7 @@
 {
-    "BattleMenu": "battle-menu",
     "Battle": "battle",
+    "BattleMenu": "battle-menu",
+    "BattleSelectUnit": "battle-select-unit",
     "Bulletin": "bulletin",
     "CityInfo": "city-info",
     "CityMenu": "city-menu",

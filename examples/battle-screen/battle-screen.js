@@ -4,6 +4,7 @@ var STATES = require('../../configs/states');
 var InitGame = require('../../lib/states/init-game');
 var Battle = require('../../lib/states/battle');
 var BattleMenu = require('../../lib/states/battle-menu');
+var BattleSelectUnit = require('../../lib/states/battle-select-unit');
 var Information = require('../../lib/states/information');
 var SelectOptions = require('../../lib/states/select-options');
 var Conversation = require('../../lib/states/conversation');
@@ -18,6 +19,7 @@ function init() {
     game.state.add(STATES.InitGame, InitGame);
     game.state.add(STATES.Battle, Battle);
     game.state.add(STATES.BattleMenu, BattleMenu);
+    game.state.add(STATES.BattleSelectUnit, BattleSelectUnit);
     game.state.add(STATES.Information, Information);
     game.state.add(STATES.SelectOptions, SelectOptions);
     game.state.add(STATES.Conversation, Conversation);
