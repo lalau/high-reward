@@ -404,5 +404,18 @@ describe('Troop', function () {
             unit2.attrs.hp = 0;
             expect(troop.isAlive()).to.be.false;
         });
+
+        it('should return total pay as sum of all members except the commander', function() {
+            var commander = new Commander({key: 'moro'});
+            var unit1 = new Unit({key: 'infantry'});
+            var unit2 = new Unit({key: 'infantry', preset: 'a'});
+            var unit3 = new Unit({key: 'infantry', preset: 'b'});
+            var troop = new Troop({unit: commander}, [{unit: unit1}, {unit: unit2}, {unit: unit3}]);
+
+            expect(troop.getPay()).to.equal(226);
+
+            troop = new Troop({unit: commander});
+            expect(troop.getPay()).to.equal(0);
+        });
     });
 });
