@@ -49,7 +49,8 @@ function init() {
                 },
                 remaining: function() {
                     return game.gameState.debt - amount;
-                }
+                },
+                total: 121
             },
             onSelect: {
                 amount: function(selectAmount) {
@@ -90,6 +91,7 @@ function getSetup() {
                     '<option value="conversation,collector-introduction">Collector - Introduction</option>' +
                     '<option value="conversation,collector-collect">Collector - Collect</option>' +
                     '<option value="conversation,battle-lose">Conversation - Battle Lose</option>' +
+                    '<option value="conversation,pay-salary">Conversation - Pay Salary</option>' +
                 '</select>' +
             '</div>';
 }

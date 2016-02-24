@@ -388,5 +388,20 @@
             "type": "information",
             "text": "Not going well... Retreat!"
         }
+    ],
+
+    "pay-salary": [
+        {
+            "position": "center",
+            "speaker": "moro",
+            "text": "It's payday!"
+        },
+        {
+            "position": "center"
+        },
+        {
+            "type": "information",
+            "text": "Today is the payday of the troops. ${total}G is paid in total!"
+        }
     ]
 }
