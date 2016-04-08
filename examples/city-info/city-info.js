@@ -13,7 +13,7 @@ function init() {
     game.state.add(STATES.CityInfo, CityInfo);
 
     game.state.start(STATES.InitGame, undefined, undefined, function() {
-        game.gameState = gameStateUtil.getNewState(game);
+        game.gameState = gameStateUtil.getNewState();
         game.state.start(STATES.CityInfo, undefined, undefined, pois['zelerd-city']);
     });
 

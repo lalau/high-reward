@@ -3,6 +3,7 @@
 var STATES = require('../../configs/states');
 var InitGame = require('../../lib/states/init-game');
 var Store = require('../../lib/states/store');
+var Region = require('../../lib/components/region');
 var gameStateUtil = require('../../lib/utils/game-state-util');
 var game;
 
@@ -16,8 +17,8 @@ function init() {
     game.state.add(STATES.Store, Store);
 
     game.state.start(STATES.InitGame, undefined, undefined, function() {
-        game.gameState = gameStateUtil.getNewState(game);
-        stores = game.gameState.currentRegion.getPoi('west-zelerd-city').stores;
+        game.gameState = gameStateUtil.getNewState();
+        stores = Region.Pois.zelerd['west-zelerd-city'].stores;
         stores.forEach(function(store) {
             storeMap[store.name] = store;
             selectStore.appendChild(createOption(store));

@@ -17,7 +17,7 @@ function init() {
     game.state.add(STATES.TroopInfo, TroopInfo);
 
     game.state.start(STATES.InitGame, undefined, undefined, function() {
-        game.gameState = gameStateUtil.getNewState(game);
+        game.gameState = gameStateUtil.getNewState();
         game.state.start(STATES.TroopInfo, undefined, undefined, 'moro');
         updateSetup('moro');
     });

@@ -27,7 +27,7 @@ function init() {
     game.state.start(STATES.InitGame, undefined, undefined, function() {
         var regionalTroop = battleUtil.getRegionalTroop('zelerd');
 
-        game.gameState = gameStateUtil.getNewState(game);
+        game.gameState = gameStateUtil.getNewState();
         game.gameState.troops.moro.members.forEach(function(unit, unitIndex) {
             if (unit) {
                 unit.updateItem('item', 'recovery-10');

@@ -12,7 +12,7 @@ function init() {
     game.state.add(STATES.TroopFormation, TroopFormation);
 
     game.state.start(STATES.InitGame, undefined, undefined, function() {
-        game.gameState = gameStateUtil.getNewState(game);
+        game.gameState = gameStateUtil.getNewState();
 
         game.gameState.troops.moro.members.forEach(function(unit) {
             if (unit) {

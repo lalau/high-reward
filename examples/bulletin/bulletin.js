@@ -19,7 +19,7 @@ function init() {
     game.state.add(STATES.SelectOptions, SelectOptions);
     game.state.start(STATES.InitGame, undefined, undefined, function() {
         game.stage.addChild(new Region(game, 'zelerd', grid, pois));
-        game.gameState = gameStateUtil.getNewState(game);
+        game.gameState = gameStateUtil.getNewState();
     });
 
     document.querySelector('#public-bulletin-button').addEventListener('click', function() {

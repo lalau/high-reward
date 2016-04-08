@@ -30,7 +30,7 @@ describe('Game State Util', function () {
 
     describe('state', function() {
         it('should dehydrate and rehydrate game state', function() {
-            var gameState = gameStateUtil.getNewState({});
+            var gameState = gameStateUtil.getNewState();
             var dehydrated;
             var rehydrated;
 
@@ -38,7 +38,7 @@ describe('Game State Util', function () {
             gameState.lastPaidDate = '0632-04-23';
 
             dehydrated = gameStateUtil.dehydrate(gameState);
-            rehydrated = gameStateUtil.rehydrate({}, dehydrated);
+            rehydrated = gameStateUtil.rehydrate(dehydrated);
 
             // normalize moment object to string to be test-able
             gameState.nextCollectDate = gameState.nextCollectDate.toISOString();

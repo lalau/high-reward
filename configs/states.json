@@ -9,7 +9,6 @@
     "Conversation": "conversation",
     "Information": "information",
     "InitGame": "init-game",
-    "InitRegion": "init-region",
     "MainMenu": "main-menu",
     "MoveMenu": "move-menu",
     "RegionMap": "region-map",
