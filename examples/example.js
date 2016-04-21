@@ -17,6 +17,7 @@ var clock = require('./clock/clock.js');
 var store = require('./store/store.js');
 var bulletin = require('./bulletin/bulletin.js');
 var cityInfo = require('./city-info/city-info.js');
+var regionMap = require('./region-map/region-map.js');
 var StateUtil = require('../lib/utils/state-util');
 var contentUpdated = false;
 var game;
@@ -88,6 +89,9 @@ function getExampleLib(hash) {
         break;
     case '#city-info':
         exampleLib = cityInfo;
+        break;
+    case '#region-map':
+        exampleLib = regionMap;
         break;
     default:
         exampleLib = troopInfo;

@@ -11,6 +11,7 @@ function MockRegion(game, name) {
 MockRegion.prototype.getName = function() {
     return this.name;
 };
+MockRegion.Pois = {zelerd: require('../../../../configs/maps/zelerd/poi')};
 
 describe('Game State Util', function () {
     before(function() {
